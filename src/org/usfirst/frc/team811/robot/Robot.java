@@ -2,6 +2,8 @@
 package org.usfirst.frc.team811.robot;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.
+
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -17,10 +19,12 @@ public class Robot extends IterativeRobot {
      */
 	
 	new DoubleSolenoid thing; 
+	new Joystick joy1;
 	
     public void robotInit() {
     	thing = new DoubleSolenoid(1);
     	thing.set(DoubleSolenoid.Value.kForward);
+    	joy1 = new joystick(1);
     }
 
     /**
@@ -34,6 +38,9 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
+    	if (joy1.getRawButton(1)) {
+    		thing.set(DoubleSolenoid.Value.kReverse);
+    	}
         
     }
     
