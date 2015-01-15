@@ -20,6 +20,7 @@ public class Robot extends IterativeRobot {
 	
     public void robotInit() {
     	thing = new DoubleSolenoid(1);
+    	thing.set(DoubleSolenoid.Value.kForward);
     }
 
     /**
