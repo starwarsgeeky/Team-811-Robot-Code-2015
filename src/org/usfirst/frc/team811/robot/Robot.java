@@ -1,8 +1,10 @@
-
 package org.usfirst.frc.team811.robot;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
-import edu.wpi.first.
+import edu.wpi.first.wpilibj.Talon;
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
+
 
 
 /**
@@ -18,20 +20,19 @@ public class Robot extends IterativeRobot {
      * used for any initialization code.
      */
 	
-	new DoubleSolenoid thing; 
-	new Joystick joy1;
+	DoubleSolenoid thing; 
+	Joystick joy1;
 	
     public void robotInit() {
-    	thing = new DoubleSolenoid(1);
-    	thing.set(DoubleSolenoid.Value.kForward);
-    	joy1 = new joystick(1);
+    	thing = new DoubleSolenoid(1,2);
+    	joy1 = new Joystick(1);
     }
 
     /**
      * This function is called periodically during autonomous
      */
     public void autonomousPeriodic() {
-
+    	thing.set(DoubleSolenoid.Value.kForward);
     }
 
     /**
@@ -40,7 +41,10 @@ public class Robot extends IterativeRobot {
     public void teleopPeriodic() {
     	if (joy1.getRawButton(1)) {
     		thing.set(DoubleSolenoid.Value.kReverse);
+    	} else if (joy1.getRawButton(2)) {
+    		thing.set(DoubleSolenoid.Value.kForward);
     	}
+    	
         
     }
     
