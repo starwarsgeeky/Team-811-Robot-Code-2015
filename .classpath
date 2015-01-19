@@ -3,5 +3,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="C:/Users/Grainne/wpilib/java/current/lib/WPILib.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Chris/wpilib/java/current/lib/WPILib.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
