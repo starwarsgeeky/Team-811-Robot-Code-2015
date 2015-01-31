@@ -9,7 +9,7 @@
 // it from being updated in the future.
 
 
-package src.org.usfirst.frc811.RobotCode2015;
+package org.usfirst.frc811.RobotCode2015;
     
 import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.CounterBase.EncodingType; 

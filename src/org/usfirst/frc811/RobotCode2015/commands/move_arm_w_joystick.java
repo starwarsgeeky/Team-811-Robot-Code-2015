@@ -11,15 +11,23 @@
 
 package org.usfirst.frc811.RobotCode2015.commands;
 
+import org.usfirst.frc.team811.robot.Robot;
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
-import org.usfirst.frc811.RobotCode2015.Robot;
+import org.usfirst.frc811.RobotCode2015.OI.Joystick;
 
 /**
  *
  */
 public class  move_arm_w_joystick extends Command {
+	double maxdistance;
+	//we'll have to give this a value at some point
+	double mindistance;
+	//we'll have to give this one a value as well, but it should be the opposite of maxdistance
 
+	
     public move_arm_w_joystick() {
+    	
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
 
@@ -30,11 +38,13 @@ public class  move_arm_w_joystick extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+	
     }
 
     // Called repeatedly when this Command is scheduled to run
-    protected void execute() {
-    }
+    protected void execute() {	
+		
+    } 
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
@@ -49,4 +59,5 @@ public class  move_arm_w_joystick extends Command {
     // subsystems is scheduled to run
     protected void interrupted() {
     }
+    
 }

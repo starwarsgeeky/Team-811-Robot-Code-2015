@@ -77,8 +77,7 @@ public class OI {
         claw_close_button.whenPressed(new close_claw());
         claw_open_button = new JoystickButton(joystick2, 1);
         claw_open_button.whenPressed(new open_claw());
-        joystick1 = new Joystick(0);
-        
+        joystick1 = new Joystick(0);        
         robot_centric_button = new JoystickButton(joystick1, 2);
         robot_centric_button.whenPressed(new to_robot_centric());
         field_centric_button = new JoystickButton(joystick1, 1);

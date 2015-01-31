@@ -13,9 +13,9 @@ package org.usfirst.frc811.RobotCode2015.subsystems;
 
 import org.usfirst.frc811.RobotCode2015.RobotMap;
 import org.usfirst.frc811.RobotCode2015.commands.*;
+import org.usfirst.frc811.RobotCode2015.commands.move_arm_w_joystick;
 import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.can.*;
-
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 
@@ -50,12 +50,29 @@ public class Arm extends Subsystem {
     }
     
     public void setPotDownValue() {
-    	arm_talon.set(); //????
+    	arm_talon.set(.1); //????
     }
     
     public void moveToDown() {
     	double setpoint = arm_talon.getSetpoint();
     	//go to setpoint??
+    }
+    
+    public void move_arm_w_joystick() {
+    	double maxdistance = 5;
+    	double mindistance = 0;
+    	
+    	if (arm_talon.getDistance() >   maxdistance && joystick2.getRawAxis > 0) {
+			arm_talon.set(0);
+		} else {
+			arm_talon.set(joystick2.getRawAxis * .1);
+		}
+		if (arm_talon.getDistance() < mindistance && joystick2.getRawAxis < 0) {
+			 arm_talon.set(0);
+		 } else {
+			arm_talon.set(joystick2.getRawAxis * .1);
+		}
+		 
     }
 }
 
