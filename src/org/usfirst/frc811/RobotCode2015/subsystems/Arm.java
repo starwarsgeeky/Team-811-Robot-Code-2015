@@ -44,5 +44,9 @@ public class Arm extends Subsystem {
     public void getPotentiometerReading() {
     	
     }
+    
+    public void setPotentiometerOnCanTalon() {
+    	arm_talon.setFeedbackDevice(Potentiometer);
+    }
 }
 
