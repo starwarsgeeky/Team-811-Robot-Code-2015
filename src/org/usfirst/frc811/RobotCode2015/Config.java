@@ -7,17 +7,24 @@ interface Config {
     int JOY_PORT_2 = 2;
     
     //Compressor Ports
-    int COMPRESSOR_RELAY = 1;
-    int COMPRESSOR_PRESSURE_INPUT = 4;
+    	//int COMPRESSOR_RELAY = 1;  ???
+    	//int COMPRESSOR_PRESSURE_INPUT = 4; ???
+    int COMPRESSOR_PORT = 0;
     
     //Claw Ports
-    int CLAW_CLOSE_CHANNEL = 3;
-    int CLAW_OPEN_CHANNEL = 4;
-    int CLAW_ACTUATOR_PORT = 5;
+    int CLAW_CLOSE_CHANNEL = 1;
+    int CLAW_OPEN_CHANNEL = 0;
+    int CLAW_ACTUATOR_PORT = 0;
     
     //Lift Ports
-    int LIFT_LEFT_TALON_PORT = 1;
-    int LIFT_RIGHT_TALON_PORT = 2;
+    int LIFT_LEFT_TALON_PORT = 6;
+    int LIFT_RIGHT_TALON_PORT = 7;
+    
+    int LIFT_LEFT_ENCODER_PORT_1 = 2;
+    int LIFT_LEFT_ENCODER_PORT_2 = 3;
+    
+    int LIFT_RIGHT_ENCODER_PORT_1 = 4;
+    int LIFT_RIGHT_ENCODER_PORT_2 = 5;
     
     //Drive Ports
     int FRONT_LEFT_PORT = 3;
@@ -29,11 +36,19 @@ interface Config {
     int DRIVE_ENCODER_PORT_2 = 10;
     
     
+    //Arm Ports
+    int ARM_TALON_PORT = 8;
+    int POT_PORT = 0;
+    double POT_OFFSET = 0.0;
+    double POT_FULLRANGE = 1.0;
+    
+    
     //Limit Switch Ports
-    int LIFT_LEFT_TOP_LIMITSWITCH_CHANNEL = 1;
-    int LIFT_LEFT_BOTTOM_LIMITSWITCH_CHANNEL = 3;
-    int LIFT_RIGHT_TOP_LIMITSWITCH_CHANNEL = 4;
-    int LIFT_RIGHT_BOTTOM_LIMITSWITCH_CHANNEL = 5;
+    int LIFT_LEFT_TOP_LIMITSWITCH_CHANNEL = 3;
+    int LIFT_LEFT_BOTTOM_LIMITSWITCH_CHANNEL = 2;
+    int LIFT_RIGHT_TOP_LIMITSWITCH_CHANNEL = 1;
+    int LIFT_RIGHT_BOTTOM_LIMITSWITCH_CHANNEL = 0;
+    
     int TOTE_TRIGGER_LIMITSWITCH_CHANNEL = 2;
     
     
@@ -42,6 +57,15 @@ interface Config {
     double DEFAULT_SPEED_SCALE = 1;
     double SLOW_SPEED_SCALE = .75;
     double Kp = 0.03;
+    double DRIVE_ENCODER_DISTANCE_PER_PULSE = 1.0;
+    double ROBOT_DRIVE_EXPIRATION = 0.1;
+    double ROBOT_DRIVE_SENSITIVITY = 0.5;
+    double ROBOT_DRIVE_MAX_OUTPUT = 1.0;
+    double GYRO_SENSITIVITY = 0.007;
+    
+    //Lift Vars
+    double LIFT_LEFT_ENCODER_DISTANCE_PER_PULSE = 1.0;
+    double LIFT_RIGHT_ENCODER_DISTANCE_PER_PULSE = 1.0;
     
     
     //Drive Controls
