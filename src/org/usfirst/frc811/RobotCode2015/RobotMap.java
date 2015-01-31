@@ -33,8 +33,10 @@ public class RobotMap {
     public static SpeedController drivebackright;
     public static RobotDrive driveRobotDrive41;
     public static Encoder drivedrive_encoder;
-    public static DigitalInput liftLimit_Top;
-    public static DigitalInput liftLimit_Bottom;
+    public static DigitalInput liftLimit_TopRight;
+    public static DigitalInput liftLimit_BottomRight;
+    public static DigitalInput liftLimit_TopLeft;
+    public static DigitalInput liftLimit_BottomLeft;
     public static Encoder liftEncoder_Left;
     public static Encoder liftEncoder_Right;
     public static CANTalon liftTalon_Left;
@@ -76,11 +78,15 @@ public class RobotMap {
         LiveWindow.addSensor("Drive", "drive_encoder", drivedrive_encoder);
         drivedrive_encoder.setDistancePerPulse(1.0);
         drivedrive_encoder.setPIDSourceParameter(PIDSourceParameter.kRate);
-        liftLimit_Top = new DigitalInput(1);
-        LiveWindow.addSensor("Lift", "Limit_Top", liftLimit_Top);
         
-        liftLimit_Bottom = new DigitalInput(0);
-        LiveWindow.addSensor("Lift", "Limit_Bottom", liftLimit_Bottom);
+        liftLimit_TopRight = new DigitalInput(1);
+        LiveWindow.addSensor("Lift", "Limit_TopRight", liftLimit_TopRight);
+        liftLimit_BottomRight = new DigitalInput(0);
+        LiveWindow.addSensor("Lift", "Limit_BottomRight", liftLimit_BottomRight);
+        liftLimit_TopRight = new DigitalInput(3);
+        LiveWindow.addSensor("Lift", "Limit_TopRight", liftLimit_TopRight);
+        liftLimit_BottomRight = new DigitalInput(2);
+        LiveWindow.addSensor("Lift", "Limit_BottomRight", liftLimit_BottomRight);
         
         liftEncoder_Left = new Encoder(2, 3, false, EncodingType.k4X);
         LiveWindow.addSensor("Lift", "Encoder_Left", liftEncoder_Left);
