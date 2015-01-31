@@ -41,12 +41,21 @@ public class Arm extends Subsystem {
         //setDefaultCommand(new MySpecialCommand());
     }
     
-    public void getPotentiometerReading() {
-    	
+    public void getPotReading() {
+    	arm_talon.getSensorPosition(Potentiometer);
     }
     
-    public void setPotentiometerOnCanTalon() {
+    public void setPotOnCanTalon() {
     	arm_talon.setFeedbackDevice(Potentiometer);
+    }
+    
+    public void setPotDownValue() {
+    	arm_talon.set(); //????
+    }
+    
+    public void moveToDown() {
+    	double setpoint = arm_talon.getSetpoint();
+    	//go to setpoint??
     }
 }
 
