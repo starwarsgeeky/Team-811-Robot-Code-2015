@@ -43,7 +43,7 @@ public class  move_arm_w_joystick extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {	
-		
+		Robot.arm.move_arm_w_joystick();
     } 
 
     // Make this return true when this Command no longer needs to run execute()
