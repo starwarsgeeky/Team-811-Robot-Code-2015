@@ -44,7 +44,7 @@ public class Claw extends Subsystem {
     }
     
     public void Close() {
-    	doubleSolenoid1.set(kReverse);
+    	doubleSolenoid1.set(kForward);
     }
 }
 
