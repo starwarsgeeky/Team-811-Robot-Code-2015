@@ -75,8 +75,8 @@ public interface Config {
     int DRIVE_X_JOYSTICK_AXIS = 3;
     int DRIVE_Y_JOYSTICK_AXIS = 2;
     int DRIVE_TURNING_JOYSTICK_AXIS = 4;
-    int FIELD_CENTRIC_BUTTON = 1;
-    int ROBOT_CENTIC_BUTTON = 2;
+    int FIELD_CENTRIC_BUTTON = 8;
+    int ROBOT_CENTIC_BUTTON = 7;
     int SLOW_BUTTON = 6;
     int ENCODER_RESET_BUTTON = 9;
     int GYRO_RESET_BUTTON = 10;
@@ -87,10 +87,14 @@ public interface Config {
     
     //Arm Controls
     int ARMS_MOVEMENT_JOYSTICK_AXIS = 2;
+    int ARM_DOWN_BUTTON = 3;
+    int ARM_UP_BUTTON = 4;
+    int ARM_NOODLE_BUTTON = 7;
     
     //Lift Controls
-    int LIFT_JOYSTICK_AXIS = 1;
-    int LIFT_DROPOFF_BUTTON = 3;
+    int LIFT_JOYSTICK_AXIS = 3;
+    int LIFT_DOWN_BUTTON = 3;
+    int LIFT_UP_BUTTON = 6;
     
     //Smartdashboard variables
     String strRobotOrientation = "Robot Orientation";
