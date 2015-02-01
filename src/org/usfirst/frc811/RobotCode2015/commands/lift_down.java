@@ -14,10 +14,11 @@ package org.usfirst.frc811.RobotCode2015.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc811.RobotCode2015.Robot;
 
+import org.usfirst.frc811.RobotCode2015.Config;
 /**
  *
  */
-public class  lift_down extends Command {
+public class  lift_down extends Command implements Config {
 
     public lift_down() {
         // Use requires() here to declare subsystem dependencies
@@ -39,7 +40,7 @@ public class  lift_down extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+    	return ((limit_BottomLeft.get() && limit_BottomRight.get()) || (encoder_Left.get() <= LIFT_ENCODER_LIMIT_LEFT_BOTTOM || encoder_Right.get() <= LIFT_ENCODER_LIMIT_LEFT_BOTTOM));
     }
 
     // Called once after isFinished returns true

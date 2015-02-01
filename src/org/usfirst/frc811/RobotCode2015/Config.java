@@ -1,6 +1,6 @@
 package org.usfirst.frc811.RobotCode2015;
 
-interface Config {
+public interface Config {
 
 	//Joysticks
     int JOY_PORT_1 = 1;
@@ -66,7 +66,10 @@ interface Config {
     //Lift Vars
     double LIFT_LEFT_ENCODER_DISTANCE_PER_PULSE = 1.0;
     double LIFT_RIGHT_ENCODER_DISTANCE_PER_PULSE = 1.0;
-    
+    int LIFT_ENCODER_LIMIT_RIGHT_TOP = 50; //Temp
+    int LIFT_ENCODER_LIMIT_LEFT_TOP = 50; //Temp
+    int LIFT_ENCODER_LIMIT_RIGHT_BOTTOM = 10; //Temp
+    int LIFT_ENCODER_LIMIT_LEFT_BOTTOM = 10; //Temp
     
     //Drive Controls
     int DRIVE_X_JOYSTICK_AXIS = 3;
