@@ -60,27 +60,17 @@ public class Lift extends Subsystem implements Config {
     	}
     }
     public void LiftUp() {
-    	if (encoder_Left.get() >= LIFT_ENCODER_LIMIT_LEFT_TOP || limit_TopLeft().get()) {
-    		talon_Left.set(0);
-    	} else {
-    		talon_Left.set(1);
-    	}
-    	if (encoder_Right.get() >= LIFT_ENCODER_LIMIT_RIGHT_TOP || limit_TopRight.get()) {
-    		talon_Right.set(0);
-    	} else {
-    		talon_Right.set(1);
-    	}
+    	talon_Left.setFeedbackDevice(encoder_left);
+    	talon_Right.setFeedbackDevice(encoder_Right);
+    	
+    	talon_Left.set(LIFT_ENCODER_LIMIT_LEFT_TOP);
+    	talon_Right.set(LIFT_ENCODER_LIMIT_RIGHT_TOP);
     }
     public void LiftDown() {
-    	if (encoder_Left.get() <= LIFT_ENCODER_LIMIT_LEFT_BOTTOM || limit_BottomLeft.get()) {
-    		talon_Left.set(0);
-    	} else {
-    		talon_Left.set(-1);
+    	talon_Left.setFeedbackDevice(encoder_left);
+    	talon_Right.setFeedbackDevice(encoder_Right);
     	
-    	if (encoder_Right.get() <= LIFT_ENCODER_LIMIT_RIGHT_BOTTOM || limit_BottomRight.get()) {
-    		talon_Right.set(0);
-    	} else {
-    		talon_Right.set(-1);
-    	}
+    	talon_Left.set(LIFT_ENCODER_LIMIT_LEFT_BOTTOM);
+    	talon_Right.set(LIFT_ENCODER_LIMIT_RIGHT_BOTTOM);
     }
 }
