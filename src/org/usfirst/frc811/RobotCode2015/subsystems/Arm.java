@@ -60,6 +60,7 @@ public class Arm extends Subsystem {
     }
     
     public void move_arm_w_joystick() {
+    	
     	double maxdistance = 5;
     	double mindistance = 0;
     	
