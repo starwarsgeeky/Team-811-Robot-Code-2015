@@ -72,28 +72,28 @@ public interface Config {
     int LIFT_ENCODER_LIMIT_LEFT_BOTTOM = 10; //Temp
     
     //Drive Controls
-    int DRIVE_X_JOYSTICK_AXIS = 3;
-    int DRIVE_Y_JOYSTICK_AXIS = 2;
-    int DRIVE_TURNING_JOYSTICK_AXIS = 4;
+    int DRIVE_X_JOYSTICK_AXIS = 1;
+    int DRIVE_Y_JOYSTICK_AXIS = 5;
+    int DRIVE_TURNING_JOYSTICK_AXIS = 3;
     int FIELD_CENTRIC_BUTTON = 8;
-    int ROBOT_CENTIC_BUTTON = 7;
+    int ROBOT_CENTRIC_BUTTON = 7;
     int SLOW_BUTTON = 6;
-    int ENCODER_RESET_BUTTON = 9;
-    int GYRO_RESET_BUTTON = 10;
+    int ENCODER_RESET_BUTTON = 3;
+    int GYRO_RESET_BUTTON = 4;
     
     //CLaw Controls
-    int CLAW_CLOSE_BUTTON = 1;
-    int CLAW_OPEN_BUTTON = 2;
+    int CLAW_CLOSE_BUTTON = 2;
+    int CLAW_OPEN_BUTTON = 1;
     
     //Arm Controls
-    int ARMS_MOVEMENT_JOYSTICK_AXIS = 2;
+    int ARMS_MOVEMENT_JOYSTICK_AXIS = 1;
     int ARM_DOWN_BUTTON = 3;
     int ARM_UP_BUTTON = 4;
-    int ARM_NOODLE_BUTTON = 7;
+    int ARM_NOODLE_BUTTON = 8;
     
     //Lift Controls
     int LIFT_JOYSTICK_AXIS = 3;
-    int LIFT_DOWN_BUTTON = 3;
+    int LIFT_DOWN_BUTTON = 5;
     int LIFT_UP_BUTTON = 6;
     
     //Smartdashboard variables
