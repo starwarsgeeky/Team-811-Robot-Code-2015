@@ -51,12 +51,15 @@ public class Arm extends Subsystem {
     }
     
     public void setPotDownValue() {
-    	arm_talon.set(.1); //????
+    	arm_talon.set(ARM_TO_NOODLE_SETPOINT);
     }
     
     public void moveToDown() {
-    	double setpoint = arm_talon.getSetpoint();
-    	//go to setpoint??
+    	arm_talon.set(ARM_TO_DOWN_SETPOINT);
+    }
+    
+    public void moveToUp() {
+    	arm_talon.set(ARM_TO_UP_SETPOINT);
     }
     
     public void move_arm_w_joystick() {

@@ -71,6 +71,13 @@ public interface Config {
     int LIFT_ENCODER_LIMIT_RIGHT_BOTTOM = 10; //Temp
     int LIFT_ENCODER_LIMIT_LEFT_BOTTOM = 10; //Temp
     
+    
+    //Atm Vars
+    double ARM_TO_NOODLE_SETPOINT = 3;
+    double ARM_TO_DOWN_SETPOINT = 1;
+    double ARM_TO_UP_SETPOINT = 5;
+    
+    
     //Drive Controls
     int DRIVE_X_JOYSTICK_AXIS = 1;
     int DRIVE_Y_JOYSTICK_AXIS = 5;
