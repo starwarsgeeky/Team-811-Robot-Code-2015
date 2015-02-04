@@ -9,7 +9,7 @@
 // it from being updated in the future.
 
 
-package src.org.usfirst.frc811.RobotCode2015.subsystems;
+package org.usfirst.frc811.RobotCode2015.subsystems;
 
 import org.usfirst.frc811.RobotCode2015.Config;
 
