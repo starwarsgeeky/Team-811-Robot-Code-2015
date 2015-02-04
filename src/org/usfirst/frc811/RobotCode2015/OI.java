@@ -21,7 +21,7 @@ import edu.wpi.first.wpilibj.buttons.*;
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
  */
-public class OI {
+public class OI implements Config {
     //// CREATING BUTTONS
     // One type of button is a joystick button which is any button on a joystick.
     // You create one by telling it which joystick it's on and which button
@@ -67,20 +67,20 @@ public class OI {
 
         joystick2 = new Joystick(1);
         
-        arm_to_noodle_button = new JoystickButton(joystick2, 5);
+        arm_to_noodle_button = new JoystickButton(joystick2, ARM_NOODLE_BUTTON);
         arm_to_noodle_button.whenPressed(new arm_to_noodle());
-        arm_to_pickup_button = new JoystickButton(joystick2, 4);
+        arm_to_pickup_button = new JoystickButton(joystick2, ARM_DOWN_BUTTON);
         arm_to_pickup_button.whenPressed(new arm_to_pickup());
-        arm_to_up_button = new JoystickButton(joystick2, 3);
+        arm_to_up_button = new JoystickButton(joystick2, ARM_UP_BUTTON);
         arm_to_up_button.whenPressed(new arm_to_up());
-        claw_close_button = new JoystickButton(joystick2, 2);
+        claw_close_button = new JoystickButton(joystick2, CLAW_CLOSE_BUTTON);
         claw_close_button.whenPressed(new close_claw());
-        claw_open_button = new JoystickButton(joystick2, 1);
+        claw_open_button = new JoystickButton(joystick2, CLAW_OPEN_BUTTON);
         claw_open_button.whenPressed(new open_claw());
         joystick1 = new Joystick(0);        
-        robot_centric_button = new JoystickButton(joystick1, 2);
+        robot_centric_button = new JoystickButton(joystick1, ROBOT_CENTRIC_BUTTON);
         robot_centric_button.whenPressed(new to_robot_centric());
-        field_centric_button = new JoystickButton(joystick1, 1);
+        field_centric_button = new JoystickButton(joystick1, FIELD_CENTRIC_BUTTON);
         field_centric_button.whenPressed(new to_field_centric());
 
 	    

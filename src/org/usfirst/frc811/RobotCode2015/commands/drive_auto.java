@@ -15,7 +15,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc811.RobotCode2015.Robot;
 
 /**
- *
+ * have it for the distance needed between each tote in auto mode 
  */
 public class  drive_auto extends Command {
 
