@@ -45,5 +45,25 @@ public class Drive extends Subsystem {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
+    
+    public void driveWithJoy() {
+    	
+    }
+    
+    public void driveAuto() {
+    	
+    }
+    
+    public void strafeAuto() {
+    	
+    }
+    
+    public void toFieldCentric() {
+    	
+    }
+    
+    public void toRobotCentric() {
+    	
+    }
 }
 
