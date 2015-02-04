@@ -55,7 +55,7 @@ public class Arm extends Subsystem implements Config{
     	arm_talon.setFeedbackDevice(Potentiometer); //SETS POT ON CANTALON
     }
     
-    public void setPotDownValue() {
+    public void moveToNoodle() {
     	arm_talon.set(ARM_TO_NOODLE_SETPOINT);
     }
     
