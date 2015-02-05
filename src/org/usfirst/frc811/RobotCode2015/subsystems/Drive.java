@@ -13,9 +13,10 @@ package org.usfirst.frc811.RobotCode2015.subsystems;
 
 import org.usfirst.frc811.RobotCode2015.RobotMap;
 import org.usfirst.frc811.RobotCode2015.commands.*;
-import edu.wpi.first.wpilibj.*;
-import edu.wpi.first.wpilibj.CounterBase.EncodingType; import edu.wpi.first.wpilibj.PIDSource.PIDSourceParameter;
 
+import edu.wpi.first.wpilibj.*;
+import edu.wpi.first.wpilibj.CounterBase.EncodingType;
+import edu.wpi.first.wpilibj.PIDSource.PIDSourceParameter;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 
@@ -48,6 +49,24 @@ public class Drive extends Subsystem {
     
     public void driveWithJoy() {
     	
+    	if (Math.abs(joy1.getRawAxis(DRIVE_STRAFING_JOYSTICK_AXIS)) <= 0.1){
+    		strafe = true;
+    		correction = 0;
+    	}
+    	if (Math.abs(joy1.getRawAxis(DRIVE_STRAFING_JOYSTICK_AXIS)) >= 0.3 && strafe ) {
+    		double angle = gyro1.getAngle();
+    		gyro1.reset();
+    		strafe = false;
+    	}
+    	 
+    	if (Math.abs(joy1.getRawAxis(DRIVE_STRAFING_JOYSTICK_AXIS)) >= 0.3) {
+    		correction = gyro1.getAngle();
+    	}
+    	
+    	
+    	robotDrive41.mecanumDrive_Cartesian(joy1.getRawAxis(DRIVE_STRAFING_JOYSTICK_AXIS) * -1, joy1.getRawAxis(DRIVE_Y_JOYSTICK_AXIS) * -1, (joy1.getRawAxis(DRIVE_X_JOYSTICK_AXIS) + correction) * -1, 0);
+    
+
     }
     
     public void driveAuto() {

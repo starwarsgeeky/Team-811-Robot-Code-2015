@@ -81,7 +81,7 @@ public interface Config {
     //Drive Controls
     int DRIVE_X_JOYSTICK_AXIS = 1;
     int DRIVE_Y_JOYSTICK_AXIS = 5;
-    int DRIVE_TURNING_JOYSTICK_AXIS = 3;
+    int DRIVE_STRAFING_JOYSTICK_AXIS = 3;
     int FIELD_CENTRIC_BUTTON = 8;
     int ROBOT_CENTRIC_BUTTON = 7;
     int SLOW_BUTTON = 6;
