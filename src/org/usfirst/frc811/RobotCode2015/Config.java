@@ -56,8 +56,6 @@ public interface Config {
     double JOYSTICK_DRIVE_TOLERANCE = .3;
     double DEFAULT_SPEED_SCALE = 1;
     double SLOW_SPEED_SCALE = .75;
-    double Kp = 0.03;
-    double DRIVE_ENCODER_DISTANCE_PER_PULSE = 1.0;
     double ROBOT_DRIVE_EXPIRATION = 0.1;
     double ROBOT_DRIVE_SENSITIVITY = 0.5;
     double ROBOT_DRIVE_MAX_OUTPUT = 1.0;
