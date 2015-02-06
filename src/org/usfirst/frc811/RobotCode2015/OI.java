@@ -77,11 +77,7 @@ public class OI implements Config {
         claw_close_button.whenPressed(new close_claw());
         claw_open_button = new JoystickButton(joystick2, CLAW_OPEN_BUTTON);
         claw_open_button.whenPressed(new open_claw());
-        joystick1 = new Joystick(0);        
-        robot_centric_button = new JoystickButton(joystick1, ROBOT_CENTRIC_BUTTON);
-        robot_centric_button.whenPressed(new to_robot_centric());
-        field_centric_button = new JoystickButton(joystick1, FIELD_CENTRIC_BUTTON);
-        field_centric_button.whenPressed(new to_field_centric());
+        joystick1 = new Joystick(0);
 
 	    
         // SmartDashboard Buttons
@@ -92,10 +88,6 @@ public class OI implements Config {
         SmartDashboard.putData("drive_auto", new drive_auto());
 
         SmartDashboard.putData("strafe_auto", new strafe_auto());
-
-        SmartDashboard.putData("to_field_centric", new to_field_centric());
-
-        SmartDashboard.putData("to_robot_centric", new to_robot_centric());
 
         SmartDashboard.putData("open_claw", new open_claw());
 
