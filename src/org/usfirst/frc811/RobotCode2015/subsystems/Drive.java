@@ -73,7 +73,7 @@ public class Drive extends Subsystem implements Config {
     public void driveAuto() {
     	drive_encoder.start();
     	int count = drive_encoder.get();
-        if (count == //RotationAmount) {
+        if (count == /*RotationAmount*/) {
         	drive_encoder.reset();
         	robotDrive41.drive.mecanumDrive_Cartesian(0, 0, 0, 0);
         } else {
