@@ -20,6 +20,5 @@ public class OneToteAuto extends CommandGroup {
 	//back away from stack and stay in autozone
 	addSequential(new back_up());
 	//done
-	//dan get back here
 	
 	}
