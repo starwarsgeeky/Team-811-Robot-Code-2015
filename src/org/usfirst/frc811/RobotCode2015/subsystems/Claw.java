@@ -13,7 +13,9 @@ package org.usfirst.frc811.RobotCode2015.subsystems;
 
 import org.usfirst.frc811.RobotCode2015.RobotMap;
 import org.usfirst.frc811.RobotCode2015.commands.*;
+
 import edu.wpi.first.wpilibj.*;
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 
@@ -39,19 +41,19 @@ public class Claw extends Subsystem {
     }
     
     public void Open() {
-    	doubleSolenoid1.set(kReverse);
+    	doubleSolenoid1.set(DoubleSolenoid.Value.kForward);
     }
     
     public void Close() {
-    	doubleSolenoid1.set(kForward);
+    	doubleSolenoid1.set(DoubleSolenoid.Value.kReverse);
     }
     
     public void stopClose(){
-    	doubleSolenoid1.set(kForward);
+    	doubleSolenoid1.set(DoubleSolenoid.Value.kForward);
     }
     
     public void stopOpen() {
-    	doubleSolenoid1.set(kReverse);
+    	doubleSolenoid1.set(DoubleSolenoid.Value.kReverse);
     }
 }
 

@@ -62,6 +62,7 @@ public interface Config {
     double GYRO_SENSITIVITY = 0.007;
     double DRIVE_ROTATION_COUNT = 1; // Temp value
     double DRIVE_ENCODER_DISTANCE_PER_PULSE = 1; // Temp value
+    double DRIVE_PID_SETPOINT = 5; //temp value
     
     //Lift Vars
     double LIFT_LEFT_ENCODER_DISTANCE_PER_PULSE = 1.0;
@@ -70,6 +71,10 @@ public interface Config {
     int LIFT_ENCODER_LIMIT_LEFT_TOP = 50; //Temp
     int LIFT_ENCODER_LIMIT_RIGHT_BOTTOM = 10; //Temp
     int LIFT_ENCODER_LIMIT_LEFT_BOTTOM = 10; //Temp
+    int LIFT_LEFT_TALON_FORWARD_SOFT_LIMIT = 50;
+    int LIFT_RIGHT_TALON_FORWARD_SOFT_LIMIT = 50;
+    int LIFT_LEFT_TALON_REVERSE_SOFT_LIMIT = 10;
+    int LIFT_RIGHT_TALON_REVERSE_SOFT_LIMIT = 10;
     
     
     //Arm Vars
@@ -78,6 +83,8 @@ public interface Config {
     double ARM_TO_UP_SETPOINT = 5;
     double ARM_MAX_DISTANCE = 5;
     double ARM_MIN_DISTANCE = 0;
+    int ARM_TALON_FORWARD_SOFT_LIMIT = 90;
+    int ARM_TALON_REVERSE_SOFT_LIMIT = 10;
     
     
     //Drive Controls
