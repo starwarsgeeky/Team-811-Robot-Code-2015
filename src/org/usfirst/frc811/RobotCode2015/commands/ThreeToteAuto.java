@@ -1,6 +1,7 @@
 package org.usfirst.frc811.RobotCode2015.commands;
 
 	import edu.wpi.first.wpilibj.command.Command;
+
 	import edu.wpi.first.wpilibj.command.CommandGroup;
 
 	public class ThreeToteAuto extends CommandGroup {
@@ -26,7 +27,6 @@ package org.usfirst.frc811.RobotCode2015.commands;
 		//back away from stack and stay in autozone
 		addSequential(new back_up());
 		//done
-		//dan get back here
 		
 		}
 		
