@@ -84,17 +84,15 @@ public class Drive extends Subsystem implements Config {
     	
     }
     
-    
-    public void toFieldCentric() {
-    	
-    }
-    
-    public void toRobotCentric() {
-    	
-    }
-    
     public void backUp() {
-    	
+    	drive_encoder.start();
+    	int count = drive_encoder.get();
+        if (count ==  /*negative Counts per Rotation*/) {
+        	drive_encoder.reset();
+        	robotDrive41.drive.mecanumDrive_Cartesian(0, 0, 0, 0);
+        } else {
+        	robotDrive41.drive.mecanumDrive_Cartesian(0, -DEFAULT_SPEED_SCALE, 0, 0);
+        }
     }
 }
 

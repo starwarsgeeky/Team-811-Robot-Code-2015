@@ -50,7 +50,8 @@ public class Arm extends Subsystem implements Config{
 	
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
-        arm_talon.setPID(0.1, 0.1, 0.1); // Temp numbers
+        
+        //arm_talon.setPID(0.1, 0.1, 0.1); // Temp numbers
     }
     
     public void getPotReading() {
