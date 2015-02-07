@@ -75,6 +75,8 @@ public interface Config {
     double ARM_TO_NOODLE_SETPOINT = 3;
     double ARM_TO_DOWN_SETPOINT = 1;
     double ARM_TO_UP_SETPOINT = 5;
+    double ARM_MAX_DISTANCE = 5;
+    double ARM_MIN_DISTANCE = 0;
     
     
     //Drive Controls
