@@ -41,12 +41,12 @@ public class  lift_down extends Command implements Config {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-    	return ((limit_BottomLeft.get() && limit_BottomRight.get()) || (encoder_Left.get() <= LIFT_ENCODER_LIMIT_LEFT_BOTTOM || encoder_Right.get() <= LIFT_ENCODER_LIMIT_LEFT_BOTTOM));
+    	return isTimedOut(); // Temporary
     }
 
     // Called once after isFinished returns true
     protected void end() {
-    	return isTimedOut();
+    	
     }
 
     // Called when another command which requires one or more of the same
