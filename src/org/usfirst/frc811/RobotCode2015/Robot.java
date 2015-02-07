@@ -65,7 +65,9 @@ public class Robot extends IterativeRobot {
         
         autoChooser = new SendableChooser();
         autoChooser.addDefault("Just drive", new drive_auto());
-        autoChooser.addObject("one box", new AutonomousCommand());
+        autoChooser.addObject("Three Totes", new ThreeToteAuto());
+        autoChooser.addObject("Two Totes", new TwoToteAuto());
+        autoChooser.addObject("One Tote", new OneToteAuto());
         
     }
 
@@ -84,6 +86,8 @@ public class Robot extends IterativeRobot {
     public void autonomousInit() {
         // schedule the autonomous command (example)
         //if (autonomousCommand != null) autonomousCommand.start();
+    	autonomousCommand = (Command) autoChooser.getSelected();
+    	autonomousCommand.start();
         
     }
 
