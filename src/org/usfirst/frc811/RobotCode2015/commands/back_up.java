@@ -16,7 +16,7 @@ public class back_up {
 
 	    // Called repeatedly when this Command is scheduled to run
 	    protected void execute() {
-	    	Robot.drive.driveAuto();
+	    	Robot.drive.backUp();
 	    }
 
 	    // Make this return true when this Command no longer needs to run execute()
