@@ -13,10 +13,10 @@ package org.usfirst.frc811.RobotCode2015.subsystems;
 
 import org.usfirst.frc811.RobotCode2015.RobotMap;
 import org.usfirst.frc811.RobotCode2015.commands.*;
+
 import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.CounterBase.EncodingType; import edu.wpi.first.wpilibj.PIDSource.PIDSourceParameter;
 import edu.wpi.first.wpilibj.can.*;
-
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 import org.usfirst.frc811.RobotCode2015.Config;
@@ -39,6 +39,24 @@ public class Lift extends Subsystem implements Config {
     
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
+    
+    public void Lift() {
+    	talon_Left.changeControlMode(CANTalon.ControlMode.Position); //makes it so will go to position when you use .set()
+    	talon_Left.setFeedbackDevice(CANTalon.FeedbackDevice.AnalogPot); //sets device so knows what it's looking for
+    	talon_Left.setPID(1.0, 0.0, 0.0); //numbers are temporary
+    	talon_Left.setForwardSoftLimit(); //put in number - like a limit switch
+    	talon_Left.setReverseSoftLimit(); //put in number - like ^^
+    	talon_Left.enableForwardSoftLimit();
+    	talon_Left.enableReverseSoftLimit();
+    	
+    	talon_Right.changeControlMode(CANTalon.ControlMode.Position); //makes it so will go to position when you use .set()
+    	talon_Right.setFeedbackDevice(CANTalon.FeedbackDevice.AnalogPot); //sets device so knows what it's looking for
+    	talon_Right.setPID(1.0, 0.0, 0.0); //numbers are temporary
+    	talon_Right.setForwardSoftLimit(); //put in number - like a limit switch
+    	talon_Right.setReverseSoftLimit(); //put in number - like ^^
+    	talon_Right.enableForwardSoftLimit();
+    	talon_Right.enableReverseSoftLimit();
+    }
 
     public void initDefaultCommand() {
     

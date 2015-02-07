@@ -1,7 +1,7 @@
 package org.usfirst.frc811.RobotCode2015.commands;
 
 public class back_up {
-	   public drive_auto() {
+	   public void drive_auto() {
 	        // Use requires() here to declare subsystem dependencies
 	        // eg. requires(chassis);
 
@@ -11,7 +11,6 @@ public class back_up {
 	        setTimeout(1);
 	    }
 
-	    // Called just before this Command runs the first time
 	    protected void initialize() {
 	    }
 

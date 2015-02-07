@@ -14,7 +14,6 @@ package org.usfirst.frc811.RobotCode2015.subsystems;
 import org.usfirst.frc811.RobotCode2015.Config;
 import org.usfirst.frc811.RobotCode2015.RobotMap;
 import org.usfirst.frc811.RobotCode2015.commands.*;
-
 import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.CounterBase.EncodingType;
 import edu.wpi.first.wpilibj.PIDSource.PIDSourceParameter;
@@ -71,16 +70,14 @@ public class Drive extends Subsystem implements Config {
     }
     
     public void driveAuto() {
-    	PIDController pid;
-    	
-    	pid = new PIDController(4, 0, 0, new PIDSource() { public double pidGet() {
-    		return drive_encoder.getDistance();}},
-    		new PIDOutput() { public void pidWrite(double d) {
-    			robotDrive41.mecanumDrive_Cartesian(0, d, gyro1.getAngle() * - 1, 0);
-    		}});
-    	pid.setAbsoluteTolerance(0.01);
-    	pid.setSetpoint(distance);
-    	
+    	drive_encoder.start();
+    	int count = drive_encoder.get();
+        if (count ==  /*Counts per Rotation*/) {
+        	drive_encoder.reset();
+        	robotDrive41.drive.mecanumDrive_Cartesian(0, 0, 0, 0);
+        } else {
+        	robotDrive41.drive.mecanumDrive_Cartesian(0, DEFAULT_SPEED_SCALE, 0, 0);
+        }
     }
     
     public void strafeAuto() {
