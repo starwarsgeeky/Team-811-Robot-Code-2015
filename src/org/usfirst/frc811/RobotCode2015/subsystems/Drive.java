@@ -70,14 +70,16 @@ public class Drive extends Subsystem implements Config {
     }
     
     public void driveAuto() {
-    	drive_encoder.start();
-    	int count = drive_encoder.get();
-        if (count ==  /*Counts per Rotation*/) {
-        	drive_encoder.reset();
-        	robotDrive41.drive.mecanumDrive_Cartesian(0, 0, 0, 0);
-        } else {
-        	robotDrive41.drive.mecanumDrive_Cartesian(0, DEFAULT_SPEED_SCALE, 0, 0);
-        }
+    	PIDController pid;
+      	
+  	   	pid = new PIDController(4, 0, 0, new PIDSource() { public double pidGet() {
+   		return drive_encoder.getDistance();}},
+   		new PIDOutput() { public void pidWrite(double d) {
+   			robotDrive41.mecanumDrive_Cartesian(0, d, gyro1.getAngle() * - 1, 0);
+  		}});
+  	  	pid.setAbsoluteTolerance(0.01);
+   		pid.setSetpoint(distance);
+    	    	
     }
     
     public void strafeAuto() {
@@ -85,14 +87,15 @@ public class Drive extends Subsystem implements Config {
     }
     
     public void backUp() {
-    	drive_encoder.start();
-    	int count = drive_encoder.get();
-        if (count ==  /*negative Counts per Rotation*/) {
-        	drive_encoder.reset();
-        	robotDrive41.drive.mecanumDrive_Cartesian(0, 0, 0, 0);
-        } else {
-        	robotDrive41.drive.mecanumDrive_Cartesian(0, -DEFAULT_SPEED_SCALE, 0, 0);
-        }
+    	PIDController pid;
+      	
+  	   	pid = new PIDController(4, 0, 0, new PIDSource() { public double pidGet() {
+   		return drive_encoder.getDistance();}},
+   		new PIDOutput() { public void pidWrite(double d) {
+   			robotDrive41.mecanumDrive_Cartesian(0, -d, gyro1.getAngle() * - 1, 0);
+  		}});
+  	  	pid.setAbsoluteTolerance(0.01);
+   		pid.setSetpoint(distance);
     }
 }
 
