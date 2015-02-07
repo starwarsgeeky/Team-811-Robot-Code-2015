@@ -2,7 +2,9 @@ package org.usfirst.frc811.RobotCode2015.commands;
 
 import org.usfirst.frc811.RobotCode2015.Robot;
 
-public class back_up {
+import edu.wpi.first.wpilibj.command.Command;
+
+public class back_up extends Command {
 	   public void drive_auto() {
 	        // Use requires() here to declare subsystem dependencies
 	        // eg. requires(chassis);

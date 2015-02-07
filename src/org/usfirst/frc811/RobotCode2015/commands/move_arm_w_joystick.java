@@ -11,10 +11,9 @@
 
 package org.usfirst.frc811.RobotCode2015.commands;
 
-import org.usfirst.frc.team811.robot.Robot;
+import org.usfirst.frc811.RobotCode2015.Robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
-import org.usfirst.frc811.RobotCode2015.OI.Joystick;
 
 /**
  *

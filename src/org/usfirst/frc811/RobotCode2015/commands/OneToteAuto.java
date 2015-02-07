@@ -22,3 +22,5 @@ public class OneToteAuto extends CommandGroup {
 	//done
 	
 	}
+	
+}
