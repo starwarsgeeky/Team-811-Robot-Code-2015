@@ -60,6 +60,7 @@ public interface Config {
     double ROBOT_DRIVE_SENSITIVITY = 0.5;
     double ROBOT_DRIVE_MAX_OUTPUT = 1.0;
     double GYRO_SENSITIVITY = 0.007;
+    double DRIVE_ROTATION_COUNT = 1; // Temp value
     
     //Lift Vars
     double LIFT_LEFT_ENCODER_DISTANCE_PER_PULSE = 1.0;
@@ -70,7 +71,7 @@ public interface Config {
     int LIFT_ENCODER_LIMIT_LEFT_BOTTOM = 10; //Temp
     
     
-    //Atm Vars
+    //Arm Vars
     double ARM_TO_NOODLE_SETPOINT = 3;
     double ARM_TO_DOWN_SETPOINT = 1;
     double ARM_TO_UP_SETPOINT = 5;
