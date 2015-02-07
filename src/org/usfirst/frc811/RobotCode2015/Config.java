@@ -61,6 +61,7 @@ public interface Config {
     double ROBOT_DRIVE_MAX_OUTPUT = 1.0;
     double GYRO_SENSITIVITY = 0.007;
     double DRIVE_ROTATION_COUNT = 1; // Temp value
+    double DRIVE_ENCODER_DISTANCE_PER_PULSE = 1; // Temp value
     
     //Lift Vars
     double LIFT_LEFT_ENCODER_DISTANCE_PER_PULSE = 1.0;
