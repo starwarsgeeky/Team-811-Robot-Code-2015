@@ -59,34 +59,34 @@ public class Arm extends Subsystem implements Config{
     
     public void moveToNoodle() {
     	arm_talon.set(ARM_TO_NOODLE_SETPOINT);
-    	SmartDashboard.putNumber("pot value", RobotMap.armPotentiometer.get());
+    	
     	SmartDashboard.putString("arm status", "move to noodle");
     }
     
     public void moveToDown() {
     	arm_talon.set(ARM_TO_DOWN_SETPOINT);
-    	SmartDashboard.putNumber("pot value", RobotMap.armPotentiometer.get());
+    
     	SmartDashboard.putString("arm status", "move to down");
     }
     
     public void moveToUp() {
     	arm_talon.set(ARM_TO_UP_SETPOINT);
-    	SmartDashboard.putNumber("pot value", RobotMap.armPotentiometer.get());
+
     	SmartDashboard.putString("arm status", "move to up");
     }
     
-    public void move_arm_w_joystick() {
-		if (arm_talon.get() > ARM_MAX_DISTANCE && joystick2.getRawAxis(ARMS_MOVEMENT_JOYSTICK_AXIS) > 0) {
+    public void move_arm_w_joystick() { //fix
+		if (arm_talon.get() > ARM_MAX_DISTANCE && joystick2.getRawAxis(ARMS_MOVEMENT_JOYSTICK_AXIS) > 0.01) {
 			arm_talon.set(ARM_MAX_DISTANCE);
 		} else {
 			arm_talon.set(joystick2.getRawAxis(ARMS_MOVEMENT_JOYSTICK_AXIS) * .1);
 		}
-		if (arm_talon.get() < ARM_MIN_DISTANCE && joystick2.getRawAxis(ARMS_MOVEMENT_JOYSTICK_AXIS) < 0) {
+		if (arm_talon.get() < ARM_MIN_DISTANCE && joystick2.getRawAxis(ARMS_MOVEMENT_JOYSTICK_AXIS) < 0.01) {
 			 arm_talon.set(ARM_MIN_DISTANCE);
 		 } else {
 			arm_talon.set(joystick2.getRawAxis(ARMS_MOVEMENT_JOYSTICK_AXIS) * .1);
 		}
-		SmartDashboard.putNumber("pot value", RobotMap.armPotentiometer.get());
+
 		SmartDashboard.putString("arm status", "move with joy :D");
 		 
     }

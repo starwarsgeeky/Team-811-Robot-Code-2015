@@ -12,10 +12,12 @@
 package org.usfirst.frc811.RobotCode2015;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.Sendable;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc811.RobotCode2015.commands.*;
 import org.usfirst.frc811.RobotCode2015.subsystems.*;
@@ -111,6 +113,14 @@ public class Robot extends IterativeRobot {
      */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
+        
+        //smart dashboard inputs here
+        SmartDashboard.putNumber("pot value", RobotMap.armarm_talon.get());
+        SmartDashboard.putData("claw value", (Sendable) RobotMap.clawDoubleSolenoid1.get());
+        SmartDashboard.putNumber("gyro value", RobotMap.driveGyro1.getAngle());        
+        SmartDashboard.putNumber("auto encoder value", RobotMap.drivedrive_encoder.getDistance());
+        SmartDashboard.putNumber("lift left talon value", RobotMap.liftTalon_Left.get());
+    	SmartDashboard.putNumber("lift right talon value", RobotMap.liftTalon_Right.get());
     }
 
     /**

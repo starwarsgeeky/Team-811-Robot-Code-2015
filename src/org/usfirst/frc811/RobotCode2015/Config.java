@@ -60,21 +60,18 @@ public interface Config {
     double ROBOT_DRIVE_SENSITIVITY = 0.5;
     double ROBOT_DRIVE_MAX_OUTPUT = 1.0;
     double GYRO_SENSITIVITY = 0.007;
-    double DRIVE_ROTATION_COUNT = 1; // Temp value
-    double DRIVE_ENCODER_DISTANCE_PER_PULSE = 1; // Temp value
-    double DRIVE_PID_SETPOINT = 5; //temp value
+    double DRIVE_ROTATION_COUNT = 1; //TODO:
+    double DRIVE_ENCODER_DISTANCE_PER_PULSE = 1; //TODO:
+    double DRIVE_PID_SETPOINT = 5; //TODO:
+    int DRIVE_END_COMMAND_DIFFERENCE_VALUE = 10; //TODO:
+    
     
     //Lift Vars
     double LIFT_LEFT_ENCODER_DISTANCE_PER_PULSE = 1.0;
     double LIFT_RIGHT_ENCODER_DISTANCE_PER_PULSE = 1.0;
-    int LIFT_ENCODER_LIMIT_RIGHT_TOP = 50; //Temp
-    int LIFT_ENCODER_LIMIT_LEFT_TOP = 50; //Temp
-    int LIFT_ENCODER_LIMIT_RIGHT_BOTTOM = 10; //Temp
-    int LIFT_ENCODER_LIMIT_LEFT_BOTTOM = 10; //Temp
-    int LIFT_LEFT_TALON_FORWARD_SOFT_LIMIT = 50;
-    int LIFT_RIGHT_TALON_FORWARD_SOFT_LIMIT = 50;
-    int LIFT_LEFT_TALON_REVERSE_SOFT_LIMIT = 10;
-    int LIFT_RIGHT_TALON_REVERSE_SOFT_LIMIT = 10;
+    int LIFT_MAX_DISTANCE = 50; //TODO:
+    int LIFT_MIN_DISTANCE = 0; //TODO:
+    int LIFT_END_COMMAND_DIFFERENCE_VALUE = 10; //TODO:
     
     
     //Arm Vars
@@ -85,6 +82,7 @@ public interface Config {
     double ARM_MIN_DISTANCE = 0;
     int ARM_TALON_FORWARD_SOFT_LIMIT = 90;
     int ARM_TALON_REVERSE_SOFT_LIMIT = 10;
+    int ARM_END_COMMAND_DIFFERENCE_VALUE = 10; //TODO:
     
     
     //Drive Controls

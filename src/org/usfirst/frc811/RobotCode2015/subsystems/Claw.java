@@ -41,26 +41,11 @@ public class Claw extends Subsystem {
     
     public void Open() {
     	doubleSolenoid1.set(DoubleSolenoid.Value.kForward);
-    	
-    	SmartDashboard.putData("claw value", (Sendable) doubleSolenoid1.get());
     }
     
     public void Close() {
     	doubleSolenoid1.set(DoubleSolenoid.Value.kReverse);
-    	
-    	SmartDashboard.putData("claw value", (Sendable) doubleSolenoid1.get());
     }
     
-    public void stopClose(){
-    	doubleSolenoid1.set(DoubleSolenoid.Value.kForward);
-    	
-    	SmartDashboard.putData("claw value", (Sendable) doubleSolenoid1.get());
-    }
-    
-    public void stopOpen() {
-    	doubleSolenoid1.set(DoubleSolenoid.Value.kReverse);
-    	
-    	SmartDashboard.putData("claw value", (Sendable) doubleSolenoid1.get());
-    }
 }
 

@@ -43,20 +43,14 @@ public class Lift extends Subsystem implements Config {
     
     public Lift() {
     	talon_Left.changeControlMode(CANTalon.ControlMode.Position); //makes it so will go to position when you use .set()
-    	talon_Left.setFeedbackDevice(CANTalon.FeedbackDevice.AnalogEncoder); //sets device so knows what it's looking for
+    	talon_Left.setFeedbackDevice(CANTalon.FeedbackDevice.QuadEncoder); //sets device so knows what it's looking for
     	talon_Left.setPID(1.0, 0.0, 0.0); //numbers are temporary
-    	talon_Left.setForwardSoftLimit(LIFT_LEFT_TALON_FORWARD_SOFT_LIMIT); //put in number - like a limit switch
-    	talon_Left.setReverseSoftLimit(LIFT_LEFT_TALON_REVERSE_SOFT_LIMIT); //put in number - like ^^
-    	talon_Left.enableForwardSoftLimit(true);
-    	talon_Left.enableReverseSoftLimit(true);
+    	talon_Left.enableLimitSwitch(true, true);
     	
     	talon_Right.changeControlMode(CANTalon.ControlMode.Position); //makes it so will go to position when you use .set()
-    	talon_Right.setFeedbackDevice(CANTalon.FeedbackDevice.AnalogEncoder); //sets device so knows what it's looking for
+    	talon_Right.setFeedbackDevice(CANTalon.FeedbackDevice.QuadEncoder); //sets device so knows what it's looking for
     	talon_Right.setPID(1.0, 0.0, 0.0); //numbers are temporary
-    	talon_Right.setForwardSoftLimit(LIFT_RIGHT_TALON_FORWARD_SOFT_LIMIT); //put in number - like a limit switch
-    	talon_Right.setReverseSoftLimit(LIFT_RIGHT_TALON_REVERSE_SOFT_LIMIT); //put in number - like ^^
-    	talon_Right.enableForwardSoftLimit(true);
-    	talon_Right.enableReverseSoftLimit(true);
+    	talon_Right.enableLimitSwitch(true, true);
     }
 
     public void initDefaultCommand() {
@@ -70,35 +64,31 @@ public class Lift extends Subsystem implements Config {
     }
     
     public void Lift_w_joy() {
-    	if ((joystick2.getRawAxis(1) < 0 && limit_BottomRight.get()) || (joystick2.getRawAxis(1) > 0 && limit_TopRight.get())) {
-    		talon_Right.set(0);
-    	} else if ((joystick2.getRawAxis(1) < 0 && limit_BottomLeft.get()) || (joystick2.getRawAxis(1) > 0 && limit_TopLeft.get())) {
-    		talon_Left.set(0);
+    	if (joystick2.getRawAxis(LIFT_JOYSTICK_AXIS) > 0.01) {
+    		talon_Right.set(LIFT_MAX_DISTANCE);
+    		talon_Left.set(LIFT_MAX_DISTANCE);
+    	} else if (joystick2.getRawAxis(LIFT_JOYSTICK_AXIS) < 0.01) {
+    		talon_Right.set(LIFT_MIN_DISTANCE);
+    		talon_Left.set(LIFT_MIN_DISTANCE);
     	} else {
-    		talon_Left.set(joystick2.getRawAxis(1));
-    		talon_Right.set(joystick2.getRawAxis(1));
+    		talon_Right.stopMotor();
+    		talon_Left.stopMotor();
     	}
     	
     	SmartDashboard.putString("lift status", "move w/ joy :D");
-    	SmartDashboard.putNumber("lift left talon value", talon_Left.get());
-    	SmartDashboard.putNumber("lift right talon value", talon_Right.get());
     }
     
     public void LiftUp() {    	
-    	talon_Left.set(LIFT_ENCODER_LIMIT_LEFT_TOP);
-    	talon_Right.set(LIFT_ENCODER_LIMIT_RIGHT_TOP);
+    	talon_Left.set(LIFT_MAX_DISTANCE);
+    	talon_Right.set(LIFT_MAX_DISTANCE);
     	
     	SmartDashboard.putString("lift status", "lift up");
-    	SmartDashboard.putNumber("lift left talon value", talon_Left.get());
-    	SmartDashboard.putNumber("lift right talon value", talon_Right.get());
     }
     
     public void LiftDown() {
-    	talon_Left.set(LIFT_ENCODER_LIMIT_LEFT_BOTTOM);
-    	talon_Right.set(LIFT_ENCODER_LIMIT_RIGHT_BOTTOM);
+    	talon_Left.set(LIFT_MIN_DISTANCE);
+    	talon_Right.set(LIFT_MIN_DISTANCE);
     	
     	SmartDashboard.putString("lift status", "lift down");
-    	SmartDashboard.putNumber("lift left talon value", talon_Left.get());
-    	SmartDashboard.putNumber("lift right talon value", talon_Right.get());
     }
 }
