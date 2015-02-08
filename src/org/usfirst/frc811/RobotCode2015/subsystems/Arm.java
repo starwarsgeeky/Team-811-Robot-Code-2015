@@ -14,10 +14,10 @@ package org.usfirst.frc811.RobotCode2015.subsystems;
 import org.usfirst.frc811.RobotCode2015.Config;
 import org.usfirst.frc811.RobotCode2015.OI;
 
-import edu.wpi.first.wpilibj.AnalogPotentiometer;
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc811.RobotCode2015.RobotMap;
 import org.usfirst.frc811.RobotCode2015.commands.move_arm_w_joystick;
@@ -36,7 +36,7 @@ public class Arm extends Subsystem implements Config{
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 
-    public void Arm() {
+    public Arm() {
     	arm_talon.changeControlMode(CANTalon.ControlMode.Position); //makes it so will go to position when you use .set()
     	arm_talon.setFeedbackDevice(CANTalon.FeedbackDevice.AnalogPot); //sets device so knows what it's looking for
     	arm_talon.setPID(1.0, 0.0, 0.0); //numbers are temporary
@@ -59,14 +59,20 @@ public class Arm extends Subsystem implements Config{
     
     public void moveToNoodle() {
     	arm_talon.set(ARM_TO_NOODLE_SETPOINT);
+    	SmartDashboard.putNumber("pot value", RobotMap.armPotentiometer.get());
+    	SmartDashboard.putString("arm status", "move to noodle");
     }
     
     public void moveToDown() {
     	arm_talon.set(ARM_TO_DOWN_SETPOINT);
+    	SmartDashboard.putNumber("pot value", RobotMap.armPotentiometer.get());
+    	SmartDashboard.putString("arm status", "move to down");
     }
     
     public void moveToUp() {
     	arm_talon.set(ARM_TO_UP_SETPOINT);
+    	SmartDashboard.putNumber("pot value", RobotMap.armPotentiometer.get());
+    	SmartDashboard.putString("arm status", "move to up");
     }
     
     public void move_arm_w_joystick() {
@@ -80,6 +86,8 @@ public class Arm extends Subsystem implements Config{
 		 } else {
 			arm_talon.set(joystick2.getRawAxis(ARMS_MOVEMENT_JOYSTICK_AXIS) * .1);
 		}
+		SmartDashboard.putNumber("pot value", RobotMap.armPotentiometer.get());
+		SmartDashboard.putString("arm status", "move with joy :D");
 		 
     }
 

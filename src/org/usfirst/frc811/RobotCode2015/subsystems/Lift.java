@@ -13,14 +13,13 @@ package org.usfirst.frc811.RobotCode2015.subsystems;
 
 import org.usfirst.frc811.RobotCode2015.OI;
 import org.usfirst.frc811.RobotCode2015.RobotMap;
-import org.usfirst.frc811.RobotCode2015.commands.*;
 
 import edu.wpi.first.wpilibj.*;
-import edu.wpi.first.wpilibj.CounterBase.EncodingType; import edu.wpi.first.wpilibj.PIDSource.PIDSourceParameter;
-import edu.wpi.first.wpilibj.can.*;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc811.RobotCode2015.Config;
+import org.usfirst.frc811.RobotCode2015.commands.moving_lift_w_joysticks;
 
 /**
  *
@@ -42,9 +41,9 @@ public class Lift extends Subsystem implements Config {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
     
-    public void Lift() {
+    public Lift() {
     	talon_Left.changeControlMode(CANTalon.ControlMode.Position); //makes it so will go to position when you use .set()
-    	talon_Left.setFeedbackDevice(CANTalon.FeedbackDevice.AnalogPot); //sets device so knows what it's looking for
+    	talon_Left.setFeedbackDevice(CANTalon.FeedbackDevice.AnalogEncoder); //sets device so knows what it's looking for
     	talon_Left.setPID(1.0, 0.0, 0.0); //numbers are temporary
     	talon_Left.setForwardSoftLimit(LIFT_LEFT_TALON_FORWARD_SOFT_LIMIT); //put in number - like a limit switch
     	talon_Left.setReverseSoftLimit(LIFT_LEFT_TALON_REVERSE_SOFT_LIMIT); //put in number - like ^^
@@ -52,7 +51,7 @@ public class Lift extends Subsystem implements Config {
     	talon_Left.enableReverseSoftLimit(true);
     	
     	talon_Right.changeControlMode(CANTalon.ControlMode.Position); //makes it so will go to position when you use .set()
-    	talon_Right.setFeedbackDevice(CANTalon.FeedbackDevice.AnalogPot); //sets device so knows what it's looking for
+    	talon_Right.setFeedbackDevice(CANTalon.FeedbackDevice.AnalogEncoder); //sets device so knows what it's looking for
     	talon_Right.setPID(1.0, 0.0, 0.0); //numbers are temporary
     	talon_Right.setForwardSoftLimit(LIFT_RIGHT_TALON_FORWARD_SOFT_LIMIT); //put in number - like a limit switch
     	talon_Right.setReverseSoftLimit(LIFT_RIGHT_TALON_REVERSE_SOFT_LIMIT); //put in number - like ^^
@@ -67,6 +66,7 @@ public class Lift extends Subsystem implements Config {
 	
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
+    	setDefaultCommand(new moving_lift_w_joysticks());
     }
     
     public void Lift_w_joy() {
@@ -78,15 +78,27 @@ public class Lift extends Subsystem implements Config {
     		talon_Left.set(joystick2.getRawAxis(1));
     		talon_Right.set(joystick2.getRawAxis(1));
     	}
+    	
+    	SmartDashboard.putString("lift status", "move w/ joy :D");
+    	SmartDashboard.putNumber("lift left talon value", talon_Left.get());
+    	SmartDashboard.putNumber("lift right talon value", talon_Right.get());
     }
     
     public void LiftUp() {    	
     	talon_Left.set(LIFT_ENCODER_LIMIT_LEFT_TOP);
     	talon_Right.set(LIFT_ENCODER_LIMIT_RIGHT_TOP);
+    	
+    	SmartDashboard.putString("lift status", "lift up");
+    	SmartDashboard.putNumber("lift left talon value", talon_Left.get());
+    	SmartDashboard.putNumber("lift right talon value", talon_Right.get());
     }
     
     public void LiftDown() {
     	talon_Left.set(LIFT_ENCODER_LIMIT_LEFT_BOTTOM);
     	talon_Right.set(LIFT_ENCODER_LIMIT_RIGHT_BOTTOM);
+    	
+    	SmartDashboard.putString("lift status", "lift down");
+    	SmartDashboard.putNumber("lift left talon value", talon_Left.get());
+    	SmartDashboard.putNumber("lift right talon value", talon_Right.get());
     }
 }

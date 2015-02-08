@@ -17,9 +17,8 @@ import org.usfirst.frc811.RobotCode2015.RobotMap;
 import org.usfirst.frc811.RobotCode2015.commands.*;
 
 import edu.wpi.first.wpilibj.*;
-import edu.wpi.first.wpilibj.CounterBase.EncodingType;
-import edu.wpi.first.wpilibj.PIDSource.PIDSourceParameter;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 
 /**
@@ -60,7 +59,7 @@ public class Drive extends Subsystem implements Config {
     		correction = 0;
     	}
     	if (Math.abs(joystick1.getRawAxis(DRIVE_STRAFING_JOYSTICK_AXIS)) >= 0.3 && strafe ) {
-    		double angle = gyro1.getAngle();
+    		gyro1.getAngle();
     		gyro1.reset();
     		strafe = false;
     	}
@@ -72,7 +71,8 @@ public class Drive extends Subsystem implements Config {
     	
     	robotDrive41.mecanumDrive_Cartesian(joystick1.getRawAxis(DRIVE_STRAFING_JOYSTICK_AXIS) * -1, joystick1.getRawAxis(DRIVE_Y_JOYSTICK_AXIS) * -1, (joystick1.getRawAxis(DRIVE_X_JOYSTICK_AXIS) + correction) * -1, 0);
     
-
+    	SmartDashboard.putNumber("gyro value", gyro1.getAngle());
+    	SmartDashboard.putString("drive status", "drive with joy :D");
     }
     
     public void driveAuto() {
@@ -85,11 +85,14 @@ public class Drive extends Subsystem implements Config {
   		}});
   	  	pid.setAbsoluteTolerance(0.01);
    		pid.setSetpoint(DRIVE_PID_SETPOINT);
+   		
+   		SmartDashboard.putNumber("auto encoder value", drive_encoder.getDistance());
+   		SmartDashboard.putString("drive status", "drive forward auto");
     	    	
     }
     
     public void strafeAuto() {
-    	
+    	SmartDashboard.putString("drive status", "strafe auto");
     }
     
     public void backUp() {
@@ -102,6 +105,9 @@ public class Drive extends Subsystem implements Config {
   		}});
   	  	pid.setAbsoluteTolerance(0.01);
    		pid.setSetpoint(DRIVE_PID_SETPOINT);
+   		
+   		SmartDashboard.putNumber("auto encoder value", drive_encoder.getDistance());
+   		SmartDashboard.putString("drive status", "drive backward auto");
     }
 }
 
