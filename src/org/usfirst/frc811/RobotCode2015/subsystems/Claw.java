@@ -15,7 +15,6 @@ import org.usfirst.frc811.RobotCode2015.RobotMap;
 
 import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 
 /**
