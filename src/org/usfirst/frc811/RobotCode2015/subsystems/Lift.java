@@ -91,4 +91,12 @@ public class Lift extends Subsystem implements Config {
     	
     	SmartDashboard.putString("lift status", "lift down");
     }
+    
+    public void encoderReset() {
+    	talon_Left.set(0);
+    	talon_Right.set(0);
+    	
+    	talon_Left.setPosition(0);
+    	talon_Right.setPosition(0);
+    }
 }
