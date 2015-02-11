@@ -11,6 +11,7 @@
 
 package org.usfirst.frc811.RobotCode2015;
 
+import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Sendable;
 import edu.wpi.first.wpilibj.command.Command;
@@ -129,5 +130,17 @@ public class Robot extends IterativeRobot {
      */
     public void testPeriodic() {
         LiveWindow.run();
+        RobotMap.liftTalon_Right.changeControlMode(CANTalon.ControlMode.PercentVbus);
+        RobotMap.liftTalon_Left.changeControlMode(CANTalon.ControlMode.PercentVbus);
+        RobotMap.liftTalon_Right.setVoltageRampRate(0.2);
+        RobotMap.liftTalon_Left.setVoltageRampRate(0.2);
+        
+        SmartDashboard.putNumber("pot value", RobotMap.armarm_talon.get());
+        SmartDashboard.putData("claw value", (Sendable) RobotMap.clawDoubleSolenoid1.get());
+        SmartDashboard.putNumber("gyro value", RobotMap.driveGyro1.getAngle());        
+        SmartDashboard.putNumber("auto encoder value", RobotMap.drivedrive_encoder.getDistance());
+        SmartDashboard.putNumber("lift left talon value", RobotMap.liftTalon_Left.get());
+    	SmartDashboard.putNumber("lift right talon value", RobotMap.liftTalon_Right.get());
+    	
     }
 }
