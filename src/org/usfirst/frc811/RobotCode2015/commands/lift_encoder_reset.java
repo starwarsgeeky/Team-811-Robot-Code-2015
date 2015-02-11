@@ -28,12 +28,12 @@ public class lift_encoder_reset extends Command implements Config {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-    	return (Math.abs(RobotMap.liftTalon_Left.getClosedLoopError()) < LIFT_END_COMMAND_DIFFERENCE_VALUE) &&
-		(Math.abs(RobotMap.liftTalon_Left.getClosedLoopError()) < LIFT_END_COMMAND_DIFFERENCE_VALUE); //TODO:
+    	return (RobotMap.liftTalon_Left.isRevLimitSwitchClosed() && RobotMap.liftTalon_Right.isRevLimitSwitchClosed());
     }
 
     // Called once after isFinished returns true
     protected void end() {
+    	Robot.lift.encoderResetDone();
     }
 
     // Called when another command which requires one or more of the same

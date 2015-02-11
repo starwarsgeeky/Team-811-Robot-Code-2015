@@ -41,7 +41,7 @@ public class Lift extends Subsystem implements Config {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
     
-    public Lift() {
+    public Lift() { 
     	talon_Left.changeControlMode(CANTalon.ControlMode.Position); //makes it so will go to position when you use .set()
     	talon_Left.setFeedbackDevice(CANTalon.FeedbackDevice.QuadEncoder); //sets device so knows what it's looking for
     	talon_Left.setPID(1.0, 0.0, 0.0); //numbers are temporary
@@ -93,10 +93,27 @@ public class Lift extends Subsystem implements Config {
     }
     
     public void encoderReset() {
-    	talon_Left.set(0);
-    	talon_Right.set(0);
+    	talon_Left.changeControlMode(CANTalon.ControlMode.PercentVbus);
+    	talon_Right.changeControlMode(CANTalon.ControlMode.PercentVbus);
+    	
+    	talon_Left.setVoltageRampRate(-0.2);
+    	talon_Right.setVoltageRampRate(-0.2);
+    }
+    
+    public void encoderResetDone() {
     	
     	talon_Left.setPosition(0);
     	talon_Right.setPosition(0);
+
+    	
+    	talon_Left.changeControlMode(CANTalon.ControlMode.Position); //makes it so will go to position when you use .set()
+    	talon_Left.setFeedbackDevice(CANTalon.FeedbackDevice.QuadEncoder); //sets device so knows what it's looking for
+    	talon_Left.setPID(1.0, 0.0, 0.0); //numbers are temporary
+    	talon_Left.enableLimitSwitch(true, true);
+    	
+    	talon_Right.changeControlMode(CANTalon.ControlMode.Position); //makes it so will go to position when you use .set()
+    	talon_Right.setFeedbackDevice(CANTalon.FeedbackDevice.QuadEncoder); //sets device so knows what it's looking for
+    	talon_Right.setPID(1.0, 0.0, 0.0); //numbers are temporary
+    	talon_Right.enableLimitSwitch(true, true);
     }
 }
