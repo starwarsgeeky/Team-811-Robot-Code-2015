@@ -6,9 +6,10 @@ public class JustDriveAuto extends CommandGroup {
 	
 	
 	public JustDriveAuto() {
-	//move forward
-	addSequential(new drive_auto());
-	//done
+		addSequential(new lift_encoder_reset());
+		//move forward
+		addSequential(new drive_auto());
+		//done
 	
 	
 	}
