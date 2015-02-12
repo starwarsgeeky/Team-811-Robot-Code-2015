@@ -132,8 +132,8 @@ public class Robot extends IterativeRobot {
         LiveWindow.run();
         RobotMap.liftTalon_Right.changeControlMode(CANTalon.ControlMode.PercentVbus);
         RobotMap.liftTalon_Left.changeControlMode(CANTalon.ControlMode.PercentVbus);
-        RobotMap.liftTalon_Right.setVoltageRampRate(0.2);
-        RobotMap.liftTalon_Left.setVoltageRampRate(0.2);
+        RobotMap.liftTalon_Right.set(0.2);
+        RobotMap.liftTalon_Left.set(0.2);
         
         SmartDashboard.putNumber("pot value", RobotMap.armarm_talon.get());
         SmartDashboard.putData("claw value", (Sendable) RobotMap.clawDoubleSolenoid1.get());
