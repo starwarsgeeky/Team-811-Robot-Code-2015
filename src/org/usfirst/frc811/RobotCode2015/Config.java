@@ -12,43 +12,29 @@ public interface Config {
     int COMPRESSOR_PORT = 0;
     
     //Claw Ports
-    int CLAW_CLOSE_CHANNEL = 1;
-    int CLAW_OPEN_CHANNEL = 0;
-    int CLAW_ACTUATOR_PORT = 0;
+    int CLAW_CLOSE_CHANNEL = 0;
+    int CLAW_OPEN_CHANNEL = 1;
     
     //Lift Ports
     int LIFT_LEFT_TALON_PORT = 6;
     int LIFT_RIGHT_TALON_PORT = 7;
     
-    int LIFT_LEFT_ENCODER_PORT_1 = 2;
-    int LIFT_LEFT_ENCODER_PORT_2 = 3;
-    
-    int LIFT_RIGHT_ENCODER_PORT_1 = 4;
-    int LIFT_RIGHT_ENCODER_PORT_2 = 5;
     
     //Drive Ports
-    int FRONT_LEFT_PORT = 3;
-    int REAR_LEFT_PORT = 4;
-    int FRONT_RIGHT_PORT = 2;
-    int REAR_RIGHT_PORT = 1;
+    int FRONT_LEFT_PORT = 1;
+    int REAR_LEFT_PORT = 2;
+    int FRONT_RIGHT_PORT = 4;
+    int REAR_RIGHT_PORT = 3;
     int GYRO_CHANNEL = 1;
-    int DRIVE_ENCODER_PORT_1 = 9;
-    int DRIVE_ENCODER_PORT_2 = 10;
+    int DRIVE_ENCODER_PORT_1 = 1;
+    int DRIVE_ENCODER_PORT_2 = 2;
     
     
     //Arm Ports
     int ARM_TALON_PORT = 8;
-    int POT_PORT = 0;
-    double POT_OFFSET = 0.0;
-    double POT_FULLRANGE = 1.0;
     
     
     //Limit Switch Ports
-    int LIFT_LEFT_TOP_LIMITSWITCH_CHANNEL = 3;
-    int LIFT_LEFT_BOTTOM_LIMITSWITCH_CHANNEL = 2;
-    int LIFT_RIGHT_TOP_LIMITSWITCH_CHANNEL = 1;
-    int LIFT_RIGHT_BOTTOM_LIMITSWITCH_CHANNEL = 0;
-    
     int TOTE_TRIGGER_LIMITSWITCH_CHANNEL = 2;
     
     

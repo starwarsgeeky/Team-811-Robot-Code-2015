@@ -55,6 +55,7 @@ public class RobotMap implements Config {
         driveGyro1 = new Gyro(GYRO_CHANNEL);
         LiveWindow.addSensor("Drive", "Gyro 1", driveGyro1);
         driveGyro1.setSensitivity(0.007);
+        
         drivefrontright = new Talon(FRONT_RIGHT_PORT);
         LiveWindow.addActuator("Drive", "frontright", (Talon) drivefrontright);
         
@@ -69,50 +70,26 @@ public class RobotMap implements Config {
         
         driveRobotDrive41 = new RobotDrive(drivefrontleft, drivebackleft,
               drivefrontright, drivebackright);
-        
         driveRobotDrive41.setSafetyEnabled(false);
         driveRobotDrive41.setExpiration(ROBOT_DRIVE_EXPIRATION);
         driveRobotDrive41.setSensitivity(ROBOT_DRIVE_SENSITIVITY);
         driveRobotDrive41.setMaxOutput(ROBOT_DRIVE_MAX_OUTPUT);
-
         driveRobotDrive41.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);
         driveRobotDrive41.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
+        
         drivedrive_encoder = new Encoder(DRIVE_ENCODER_PORT_1, DRIVE_ENCODER_PORT_2, false, EncodingType.k4X);
         LiveWindow.addSensor("Drive", "drive_encoder", drivedrive_encoder);
         drivedrive_encoder.setDistancePerPulse(DRIVE_ENCODER_DISTANCE_PER_PULSE);
         drivedrive_encoder.setPIDSourceParameter(PIDSourceParameter.kRate);
         
-        liftLimit_TopRight = new DigitalInput(LIFT_RIGHT_TOP_LIMITSWITCH_CHANNEL);
-        LiveWindow.addSensor("Lift", "Limit_TopRight", liftLimit_TopRight);
-        liftLimit_BottomRight = new DigitalInput(LIFT_RIGHT_BOTTOM_LIMITSWITCH_CHANNEL);
-        LiveWindow.addSensor("Lift", "Limit_BottomRight", liftLimit_BottomRight);
-        liftLimit_TopRight = new DigitalInput(LIFT_RIGHT_TOP_LIMITSWITCH_CHANNEL);
-        LiveWindow.addSensor("Lift", "Limit_TopRight", liftLimit_TopRight);
-        liftLimit_BottomRight = new DigitalInput(LIFT_RIGHT_BOTTOM_LIMITSWITCH_CHANNEL);
-        LiveWindow.addSensor("Lift", "Limit_BottomRight", liftLimit_BottomRight);
-        
-        liftEncoder_Left = new Encoder(LIFT_LEFT_ENCODER_PORT_1, LIFT_LEFT_ENCODER_PORT_2, false, EncodingType.k4X);
-        LiveWindow.addSensor("Lift", "Encoder_Left", liftEncoder_Left);
-        liftEncoder_Left.setDistancePerPulse(LIFT_LEFT_ENCODER_DISTANCE_PER_PULSE);
-        liftEncoder_Left.setPIDSourceParameter(PIDSourceParameter.kRate);
-        liftEncoder_Right = new Encoder(LIFT_RIGHT_ENCODER_PORT_1, LIFT_RIGHT_ENCODER_PORT_2, false, EncodingType.k4X);
-        LiveWindow.addSensor("Lift", "Encoder_Right", liftEncoder_Right);
-        liftEncoder_Right.setDistancePerPulse(LIFT_RIGHT_ENCODER_DISTANCE_PER_PULSE);
-        liftEncoder_Right.setPIDSourceParameter(PIDSourceParameter.kRate);
         liftTalon_Left = new CANTalon(LIFT_LEFT_TALON_PORT);
-        
         
         liftTalon_Right = new CANTalon(LIFT_RIGHT_TALON_PORT);
         
-        
         clawCompressor1 = new Compressor(COMPRESSOR_PORT);
         
-        
-        clawDoubleSolenoid1 = new DoubleSolenoid(CLAW_ACTUATOR_PORT, CLAW_OPEN_CHANNEL, CLAW_CLOSE_CHANNEL);
+        clawDoubleSolenoid1 = new DoubleSolenoid(CLAW_OPEN_CHANNEL, CLAW_CLOSE_CHANNEL);
         LiveWindow.addActuator("Claw", "Double Solenoid 1", clawDoubleSolenoid1);
-        
-        armPotentiometer = new AnalogPotentiometer(POT_PORT, POT_FULLRANGE, POT_OFFSET);
-        LiveWindow.addSensor("Arm", " Potentiometer", armPotentiometer);
         
         armarm_talon = new CANTalon(ARM_TALON_PORT);
         
