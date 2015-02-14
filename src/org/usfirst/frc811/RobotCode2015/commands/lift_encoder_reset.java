@@ -5,6 +5,7 @@ import org.usfirst.frc811.RobotCode2015.Robot;
 import org.usfirst.frc811.RobotCode2015.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class lift_encoder_reset extends Command implements Config {
 	
@@ -23,12 +24,15 @@ public class lift_encoder_reset extends Command implements Config {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	SmartDashboard.putString("lift encoder reset status", "about to reset");
     	Robot.lift.encoderReset();
+    	SmartDashboard.putString("lift encoder reset status", "just reset");
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-    	return (RobotMap.liftTalon_Left.isRevLimitSwitchClosed() && RobotMap.liftTalon_Right.isRevLimitSwitchClosed());
+    	SmartDashboard.putBoolean("limit switches", (RobotMap.liftTalon_Left.isFwdLimitSwitchClosed() && RobotMap.liftTalon_Right.isFwdLimitSwitchClosed()));
+    	return (RobotMap.liftTalon_Left.isFwdLimitSwitchClosed() && RobotMap.liftTalon_Right.isFwdLimitSwitchClosed());
     }
 
     // Called once after isFinished returns true

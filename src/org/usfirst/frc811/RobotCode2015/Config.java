@@ -16,8 +16,8 @@ public interface Config {
     int CLAW_OPEN_CHANNEL = 1;
     
     //Lift Ports
-    int LIFT_LEFT_TALON_PORT = 6;
-    int LIFT_RIGHT_TALON_PORT = 7;
+    int LIFT_LEFT_TALON_PORT = 2;
+    int LIFT_RIGHT_TALON_PORT = 3;
     
     
     //Drive Ports
@@ -31,7 +31,7 @@ public interface Config {
     
     
     //Arm Ports
-    int ARM_TALON_PORT = 8;
+    int ARM_TALON_PORT = 1;
     
     
     //Limit Switch Ports
@@ -55,26 +55,27 @@ public interface Config {
     //Lift Vars
     double LIFT_LEFT_ENCODER_DISTANCE_PER_PULSE = 1.0;
     double LIFT_RIGHT_ENCODER_DISTANCE_PER_PULSE = 1.0;
-    int LIFT_MAX_DISTANCE = 50; //TODO:
-    int LIFT_MIN_DISTANCE = 0; //TODO:
+    int LIFT_MAX_DISTANCE = 0; //TODO:
+    int LIFT_MIN_DISTANCE = -71344; //TODO:
     int LIFT_END_COMMAND_DIFFERENCE_VALUE = 10; //TODO:
     
     
     //Arm Vars
-    double ARM_TO_NOODLE_SETPOINT = 3;
-    double ARM_TO_DOWN_SETPOINT = 1;
-    double ARM_TO_UP_SETPOINT = 5;
+    double ARM_TO_NOODLE_SETPOINT = 237;
+    double ARM_TO_DOWN_SETPOINT = 20;
+    double ARM_TO_UP_SETPOINT = 436;
     double ARM_MAX_DISTANCE = 5;
     double ARM_MIN_DISTANCE = 0;
-    int ARM_TALON_FORWARD_SOFT_LIMIT = 90;
-    int ARM_TALON_REVERSE_SOFT_LIMIT = 10;
+    int ARM_TALON_FORWARD_SOFT_LIMIT = 430;
+    int ARM_TALON_REVERSE_SOFT_LIMIT = 19;
     int ARM_END_COMMAND_DIFFERENCE_VALUE = 10; //TODO:
     
     
     //Drive Controls
-    int DRIVE_X_JOYSTICK_AXIS = 1;
-    int DRIVE_Y_JOYSTICK_AXIS = 5;
-    int DRIVE_STRAFING_JOYSTICK_AXIS = 3;
+    int DRIVE_X_JOYSTICK_AXIS = 4;
+    int DRIVE_Y_JOYSTICK_AXIS = 1;
+    int DRIVE_STRAFING_RIGHT_JOYSTICK_AXIS = 3;
+    int DRIVE_STRAFING_LEFT_JOYSTICK_AXIS = 2;
     int FIELD_CENTRIC_BUTTON = 8;
     int ROBOT_CENTRIC_BUTTON = 7;
     int SLOW_BUTTON = 6;
@@ -86,15 +87,16 @@ public interface Config {
     int CLAW_OPEN_BUTTON = 1;
     
     //Arm Controls
-    int ARMS_MOVEMENT_JOYSTICK_AXIS = 1;
+    int ARM_MOVEMENT_JOYSTICK_AXIS = 1;
     int ARM_DOWN_BUTTON = 3;
     int ARM_UP_BUTTON = 4;
     int ARM_NOODLE_BUTTON = 8;
     
     //Lift Controls
-    int LIFT_JOYSTICK_AXIS = 3;
+    int LIFT_JOYSTICK_AXIS = 5;
     int LIFT_DOWN_BUTTON = 5;
     int LIFT_UP_BUTTON = 6;
+    int LIFT_ENCODER_RESET_BUTTON = 7;
     
     //Smartdashboard variables
     String strRobotOrientation = "Robot Orientation";
