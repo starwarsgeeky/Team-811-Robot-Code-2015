@@ -10,17 +10,14 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class lift_to_preload extends Command implements Config {
 	
-	double endpoint;
-	
 	public lift_to_preload() {
-		
+		setTimeout(2);
 	}
 	
 	 protected void initialize() {
 		 RobotMap.liftTalon_Left.changeControlMode(CANTalon.ControlMode.Position);
 		 RobotMap.liftTalon_Right.changeControlMode(CANTalon.ControlMode.Position);
 		 
-		 endpoint = System.currentTimeMillis() + 25;
 	    }
 
 	    // Called repeatedly when this Command is scheduled to run
@@ -33,8 +30,8 @@ public class lift_to_preload extends Command implements Config {
 
 	    // Make this return true when this Command no longer needs to run execute()
 	    protected boolean isFinished() {
-	    	return (System.currentTimeMillis() > endpoint) && (Math.abs(RobotMap.liftTalon_Left.getClosedLoopError()) < LIFT_END_COMMAND_DIFFERENCE_VALUE) &&
-    				(Math.abs(RobotMap.liftTalon_Left.getClosedLoopError()) < LIFT_END_COMMAND_DIFFERENCE_VALUE); //TODO:
+	    	return ((timeSinceInitialized() > .25) && (Math.abs(RobotMap.liftTalon_Left.getClosedLoopError()) < LIFT_END_COMMAND_DIFFERENCE_VALUE) &&
+    				(Math.abs(RobotMap.liftTalon_Left.getClosedLoopError()) < LIFT_END_COMMAND_DIFFERENCE_VALUE)) || isTimedOut(); //TODO:
 	    }
 
 	    // Called once after isFinished returns true
