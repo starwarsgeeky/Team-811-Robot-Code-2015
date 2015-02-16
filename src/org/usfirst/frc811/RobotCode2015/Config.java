@@ -70,7 +70,7 @@ public interface Config {
     int ARM_TALON_FORWARD_SOFT_LIMIT = 430;
     int ARM_TALON_REVERSE_SOFT_LIMIT = 19;
     int ARM_END_COMMAND_DIFFERENCE_VALUE = 10; //TODO:
-    double ARM_TO_PRELOAD_SETPOINT = 138; //TODO:
+    double ARM_TO_PRELOAD_SETPOINT = 152; //TODO:
     
     
     //Drive Controls
