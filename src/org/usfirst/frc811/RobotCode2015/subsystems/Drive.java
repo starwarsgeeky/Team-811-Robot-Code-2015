@@ -97,12 +97,13 @@ public class Drive extends Subsystem implements Config {
     @SuppressWarnings("deprecation")
 	public void driveAuto() {
     	
-      	double pulse = 256;
+      	double pulse = 1;
       	
   	   	RobotMap.pid = new PIDController(4, 0, 0, new PIDSource() { public double pidGet() {
    		return drive_encoder.getDistance();}},
    		new PIDOutput() { public void pidWrite(double d) {
-   			robotDrive41.mecanumDrive_Cartesian(0, d, 0, 0);
+   			robotDrive41.mecanumDrive_Cartesian(0, .2, 0, 0);
+   			SmartDashboard.putString("drive status", "in pidloop for driving");
   		}});
   	   	drive_encoder.setDistancePerPulse(pulse);
   	  	RobotMap.pid.setAbsoluteTolerance(0.01);

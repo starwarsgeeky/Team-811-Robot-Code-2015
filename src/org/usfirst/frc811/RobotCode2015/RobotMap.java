@@ -82,8 +82,9 @@ public class RobotMap implements Config {
         
         drivedrive_encoder = new Encoder(DRIVE_ENCODER_PORT_1, DRIVE_ENCODER_PORT_2, false, EncodingType.k4X);
         LiveWindow.addSensor("Drive", "drive_encoder", drivedrive_encoder);
-        drivedrive_encoder.setDistancePerPulse(DRIVE_ENCODER_DISTANCE_PER_PULSE);
-        drivedrive_encoder.setPIDSourceParameter(PIDSourceParameter.kRate);
+        drivedrive_encoder.setPIDSourceParameter(PIDSourceParameter.kDistance);
+        RobotMap.drivedrive_encoder.setDistancePerPulse(1/14.5); //14.5 was raw of distance per inch so set this so that it would count ticks in inches
+        RobotMap.drivedrive_encoder.setReverseDirection(true);
         
         liftTalon_Left = new CANTalon(LIFT_LEFT_TALON_PORT);
         

@@ -48,7 +48,7 @@ public interface Config {
     double GYRO_SENSITIVITY = 0.007;
     double DRIVE_ROTATION_COUNT = 1; //TODO:
     double DRIVE_ENCODER_DISTANCE_PER_PULSE = 1; //TODO:
-    double DRIVE_PID_SETPOINT = 5; //TODO:
+    double DRIVE_PID_SETPOINT = 1000; //TODO:
     int DRIVE_END_COMMAND_DIFFERENCE_VALUE = 10; //TODO:
     
     
@@ -57,7 +57,7 @@ public interface Config {
     double LIFT_RIGHT_ENCODER_DISTANCE_PER_PULSE = 1.0;
     int LIFT_MAX_DISTANCE = 0; //TODO:
     int LIFT_MIN_DISTANCE = -71344; //TODO:
-    int LIFT_END_COMMAND_DIFFERENCE_VALUE = 10; //TODO:
+    int LIFT_END_COMMAND_DIFFERENCE_VALUE = 1000; //TODO:
     
     
     //Arm Vars

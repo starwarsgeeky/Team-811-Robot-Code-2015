@@ -8,19 +8,19 @@ package org.usfirst.frc811.RobotCode2015.commands;
 		public ThreeToteAuto() {
 			addSequential(new lift_encoder_reset());
 			//move forward
-			addSequential(new drive_auto());
+			addSequential(new drive_auto(-17));
 			//pick up tote
 			addSequential(new grab_box());
 			//move forward and hopefully not crash into a container / another robot
-			addSequential(new drive_auto());
+			addSequential(new drive_auto(-17));
 			//pick up tote
 			addSequential(new grab_box());
 			//move forward and hopefully not crash into a container / another robot
-			addSequential(new drive_auto());
+			addSequential(new drive_auto(-17));
 			//pick up tote
 			addSequential(new grab_box());
 			//strafe left
-			addSequential(new strafe_auto());
+			addSequential(new strafe_auto(-110));
 			//drop tote stack
 			addSequential(new lift_down());
 			//back away from stack and stay in autozone

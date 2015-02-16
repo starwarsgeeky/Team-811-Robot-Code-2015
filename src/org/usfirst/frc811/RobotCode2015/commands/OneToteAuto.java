@@ -6,10 +6,15 @@ public class OneToteAuto extends CommandGroup {
 	
 	
 	public OneToteAuto() {
+		//addSequential(new close_claw());
+		
 		addSequential(new lift_encoder_reset());
 		addSequential(new lift_up());
+		addSequential(new drive_auto(-80));
+		addSequential(new grab_box());
+		addSequential(new strafe_auto(-110));
 		//move forward
-	//	addSequential(new drive_auto());
+		
 		//pick up tote
 //		addSequential(new grab_box());
 		//move forward and hopefully not crash into a container / another robot

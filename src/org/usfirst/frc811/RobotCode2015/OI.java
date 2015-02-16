@@ -95,9 +95,9 @@ public class OI implements Config {
 
         SmartDashboard.putData("drive_w_joysticks", new drive_w_joysticks());
 
-        SmartDashboard.putData("drive_auto", new drive_auto());
+        SmartDashboard.putData("drive_auto", new drive_auto(-17));
 
-        SmartDashboard.putData("strafe_auto", new strafe_auto());
+        SmartDashboard.putData("strafe_auto", new strafe_auto(-110));
 
         SmartDashboard.putData("open_claw", new open_claw());
 
