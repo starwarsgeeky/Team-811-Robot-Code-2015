@@ -64,6 +64,19 @@ public class Lift extends Subsystem implements Config {
     }
     
     public void Lift_w_joy() { 
+    	talon_Left.changeControlMode(CANTalon.ControlMode.PercentVbus);
+    	talon_Right.changeControlMode(CANTalon.ControlMode.PercentVbus);
+    	
+    	if (joystick2.getRawAxis(LIFT_UP_JOYSTICK_AXIS) > 0.2) {
+    		talon_Left.set(-0.7);
+    		talon_Right.set(-0.7);
+    	} else if (joystick2.getRawAxis(LIFT_DOWN_JOYSTICK_AXIS) > 0.2) {
+    		talon_Left.set(0.7);
+    		talon_Right.set(0.7);
+    	} else {
+    		talon_Left.set(0.0);
+    		talon_Right.set(0.0);
+    	}
     /*	
     	if (joystick2.getRawAxis(LIFT_JOYSTICK_AXIS) < -0.1) {
     		talon_Right.set(0.3);
@@ -84,7 +97,10 @@ public class Lift extends Subsystem implements Config {
     	*/
     }
     
-    public void LiftUp() {    	
+    public void LiftUp() {    
+    	talon_Left.changeControlMode(CANTalon.ControlMode.Position);
+    	talon_Right.changeControlMode(CANTalon.ControlMode.Position);
+    	
     	talon_Left.set(LIFT_MIN_DISTANCE);
     	talon_Right.set(LIFT_MIN_DISTANCE);
     	
@@ -92,11 +108,24 @@ public class Lift extends Subsystem implements Config {
     }
     
     public void LiftDown() {
+    	talon_Left.changeControlMode(CANTalon.ControlMode.Position);
+    	talon_Right.changeControlMode(CANTalon.ControlMode.Position);
+    	
     	talon_Left.set(LIFT_MAX_DISTANCE);
     	talon_Right.set(LIFT_MAX_DISTANCE);
     	
     	SmartDashboard.putString("lift status", "lift up");
     	
+    }
+    
+    public void LiftToPreload() {
+    	talon_Left.changeControlMode(CANTalon.ControlMode.Position);
+    	talon_Right.changeControlMode(CANTalon.ControlMode.Position);
+    	
+    	talon_Left.set(LIFT_PRELOAD_DISTANCE);
+    	talon_Right.set(LIFT_PRELOAD_DISTANCE);
+    	
+    	SmartDashboard.putString("lift status", "lift up");
     }
     
     public void encoderReset() {

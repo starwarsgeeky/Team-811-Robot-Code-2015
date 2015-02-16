@@ -6,7 +6,17 @@ public class TwoToteAuto extends CommandGroup {
 	
 	
 	public TwoToteAuto() {
+		
+		addSequential(new open_claw());
+		addSequential(new arm_to_up());
 		addSequential(new lift_encoder_reset());
+		addSequential(new lift_up());
+		addSequential(new drive_auto(-80));
+		addSequential(new grab_box());
+		addSequential(new strafe_auto(-110));
+		
+		
+		/*addSequential(new lift_encoder_reset());
 		//move forward
 		addSequential(new drive_auto(-17));
 		//pick up tote
@@ -22,6 +32,8 @@ public class TwoToteAuto extends CommandGroup {
 		//back away from stack and stay in autozone
 		addSequential(new back_up());
 		//done
+		 * \
+		 */
 	
 	}
 	

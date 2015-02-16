@@ -8,7 +8,7 @@ public class JustDriveAuto extends CommandGroup {
 	public JustDriveAuto() {
 		addSequential(new lift_encoder_reset());
 		//move forward
-		addSequential(new drive_auto(-17));
+		addSequential(new drive_auto(-80));
 		//done
 	
 	

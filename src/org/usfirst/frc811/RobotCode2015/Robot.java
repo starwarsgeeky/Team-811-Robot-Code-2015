@@ -72,6 +72,8 @@ public class Robot extends IterativeRobot implements Config {
         autoChooser.addObject("Three Totes", new ThreeToteAuto());
         autoChooser.addObject("Two Totes", new TwoToteAuto());
         autoChooser.addObject("One Tote", new OneToteAuto());
+        SmartDashboard.putData("Auto Mode", autoChooser);
+
         
     }
 
@@ -92,8 +94,9 @@ public class Robot extends IterativeRobot implements Config {
         //if (autonomousCommand != null) autonomousCommand.start();
     	//Robot.lift.encoderReset();
     	RobotMap.driveGyro1.reset();
-    	autonomousCommand =  new OneToteAuto(); //(Command) autoChooser.getSelected();
-    	autonomousCommand.start();
+    	autonomousCommand = (Command) autoChooser.getSelected();
+		autonomousCommand.start();
+    	
         
     }
 
@@ -155,8 +158,11 @@ public class Robot extends IterativeRobot implements Config {
     	SmartDashboard.putNumber("lift left encoder value", RobotMap.liftTalon_Left.getEncPosition());
     	SmartDashboard.putNumber("lift right encoder value", RobotMap.liftTalon_Right.getEncPosition());
     	SmartDashboard.putNumber("arm joystick value", RobotMap.joystick2.getRawAxis(ARM_MOVEMENT_JOYSTICK_AXIS));
-    	SmartDashboard.putNumber("lift joystick value", RobotMap.joystick2.getRawAxis(LIFT_JOYSTICK_AXIS));
+    	SmartDashboard.putNumber("lift up joystick value", RobotMap.joystick2.getRawAxis(LIFT_UP_JOYSTICK_AXIS));
+    	SmartDashboard.putNumber("lift down joystick value", RobotMap.joystick2.getRawAxis(LIFT_DOWN_JOYSTICK_AXIS));
     	SmartDashboard.putBoolean("reset button", RobotMap.joystick2.getRawButton(LIFT_ENCODER_RESET_BUTTON));
+    	SmartDashboard.putNumber("lift left error", RobotMap.liftTalon_Left.getClosedLoopError());
+    	SmartDashboard.putNumber("lift right error", RobotMap.liftTalon_Right.getClosedLoopError());
     	
     	//camera displayed to the smart dashboard
     	CameraServer cam = CameraServer.getInstance();

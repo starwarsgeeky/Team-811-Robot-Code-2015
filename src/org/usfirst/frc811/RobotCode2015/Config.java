@@ -47,7 +47,7 @@ public interface Config {
     double ROBOT_DRIVE_MAX_OUTPUT = 1.0;
     double GYRO_SENSITIVITY = 0.007;
     double DRIVE_ROTATION_COUNT = 1; //TODO:
-    double DRIVE_ENCODER_DISTANCE_PER_PULSE = 1; //TODO:
+    double DRIVE_ENCODER_DISTANCE_PER_PULSE = 1; 
     double DRIVE_PID_SETPOINT = 1000; //TODO:
     int DRIVE_END_COMMAND_DIFFERENCE_VALUE = 10; //TODO:
     
@@ -55,9 +55,10 @@ public interface Config {
     //Lift Vars
     double LIFT_LEFT_ENCODER_DISTANCE_PER_PULSE = 1.0;
     double LIFT_RIGHT_ENCODER_DISTANCE_PER_PULSE = 1.0;
-    int LIFT_MAX_DISTANCE = 0; //TODO:
-    int LIFT_MIN_DISTANCE = -71344; //TODO:
-    int LIFT_END_COMMAND_DIFFERENCE_VALUE = 1000; //TODO:
+    int LIFT_MAX_DISTANCE = 0; 
+    int LIFT_MIN_DISTANCE = -71344; 
+    int LIFT_PRELOAD_DISTANCE = -23500;
+    int LIFT_END_COMMAND_DIFFERENCE_VALUE = 1000; 
     
     
     //Arm Vars
@@ -69,6 +70,7 @@ public interface Config {
     int ARM_TALON_FORWARD_SOFT_LIMIT = 430;
     int ARM_TALON_REVERSE_SOFT_LIMIT = 19;
     int ARM_END_COMMAND_DIFFERENCE_VALUE = 10; //TODO:
+    double ARM_TO_PRELOAD_SETPOINT = 138; //TODO:
     
     
     //Drive Controls
@@ -93,7 +95,8 @@ public interface Config {
     int ARM_NOODLE_BUTTON = 8;
     
     //Lift Controls
-    int LIFT_JOYSTICK_AXIS = 5;
+    int LIFT_UP_JOYSTICK_AXIS = 3;
+    int LIFT_DOWN_JOYSTICK_AXIS = 2;
     int LIFT_DOWN_BUTTON = 5;
     int LIFT_UP_BUTTON = 6;
     int LIFT_ENCODER_RESET_BUTTON = 7;

@@ -42,8 +42,8 @@ public class  arm_to_noodle extends Command implements Config {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-    	return (Math.abs(RobotMap.armarm_talon.getClosedLoopError()) < ARM_END_COMMAND_DIFFERENCE_VALUE); //TODO:
-    }
+    	return (timeSinceInitialized() > 0.25) && (Math.abs(RobotMap.armarm_talon.getClosedLoopError()) < ARM_END_COMMAND_DIFFERENCE_VALUE); //TODO:
+    } 
 
     // Called once after isFinished returns true
     protected void end() {
