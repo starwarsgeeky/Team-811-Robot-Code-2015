@@ -93,9 +93,9 @@ public class Arm extends Subsystem implements Config{
     	arm_talon.changeControlMode(CANTalon.ControlMode.PercentVbus);
     	
     	if (joystick2.getRawAxis(ARM_MOVEMENT_JOYSTICK_AXIS) < -0.2) {
-    		arm_talon.set(0.7);
+    		arm_talon.set(-joystick2.getRawAxis(ARM_MOVEMENT_JOYSTICK_AXIS));
     	} else if (joystick2.getRawAxis(ARM_MOVEMENT_JOYSTICK_AXIS) > 0.2) {
-    		arm_talon.set(-0.7);
+    		arm_talon.set(-joystick2.getRawAxis(ARM_MOVEMENT_JOYSTICK_AXIS));
     	} else {
     		arm_talon.set(0.0);
     	}
