@@ -7,16 +7,15 @@ public class TwoToteAuto extends CommandGroup {
 	
 	public TwoToteAuto() {
 		
+		addParallel(new close_claw());
 		addSequential(new lift_encoder_reset());
-		addParallel(new open_claw());
 		
-		addSequential(new arm_to_up());
+		addParallel(new arm_to_up());
 		addParallel(new lift_up());
 		
-		addSequential(new drive_auto(-80));
-		
-		addSequential(new grab_box());
-		addParallel(new strafe_auto(-110));
+		addSequential(new drive_auto(-79));
+
+		addSequential(new strafe_auto(-110));
 		
 		
 		/*addSequential(new lift_encoder_reset());

@@ -4,6 +4,7 @@ import org.usfirst.frc811.RobotCode2015.Config;
 import org.usfirst.frc811.RobotCode2015.Robot;
 import org.usfirst.frc811.RobotCode2015.RobotMap;
 
+import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -20,6 +21,8 @@ public class lift_encoder_reset extends Command implements Config {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	RobotMap.liftTalon_Left.changeControlMode(CANTalon.ControlMode.PercentVbus);
+    	RobotMap.liftTalon_Right.changeControlMode(CANTalon.ControlMode.PercentVbus);
     }
 
     // Called repeatedly when this Command is scheduled to run

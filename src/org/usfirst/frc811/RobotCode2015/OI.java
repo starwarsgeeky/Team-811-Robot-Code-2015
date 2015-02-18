@@ -75,9 +75,9 @@ public class OI implements Config {
         arm_to_up_button = new JoystickButton(RobotMap.joystick2, ARM_UP_BUTTON);
         arm_to_up_button.whenPressed(new arm_to_up());
         claw_close_button = new JoystickButton(RobotMap.joystick2, CLAW_CLOSE_BUTTON);
-        claw_close_button.whenPressed(new close_claw());
+        claw_close_button.whenPressed(new open_claw());
         claw_open_button = new JoystickButton(RobotMap.joystick2, CLAW_OPEN_BUTTON);
-        claw_open_button.whenPressed(new open_claw());
+        claw_open_button.whenPressed(new close_claw());
         lift_down_button = new JoystickButton(RobotMap.joystick2, LIFT_DOWN_BUTTON);
         lift_down_button.whenPressed(new lift_down());
         lift_up_button = new JoystickButton(RobotMap.joystick2, LIFT_UP_BUTTON);
@@ -99,9 +99,9 @@ public class OI implements Config {
 
         SmartDashboard.putData("strafe_auto", new strafe_auto(-110));
 
-        SmartDashboard.putData("close_claw", new open_claw());
+        SmartDashboard.putData("close_claw", new close_claw());
 
-        SmartDashboard.putData("open_claw", new close_claw());
+        SmartDashboard.putData("open_claw", new open_claw());
 
         SmartDashboard.putData("move_arm_w_joystick", new move_arm_w_joystick());
 

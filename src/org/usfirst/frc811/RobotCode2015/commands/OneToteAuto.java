@@ -7,8 +7,10 @@ public class OneToteAuto extends CommandGroup {
 	
 	public OneToteAuto() {
 		//addSequential(new close_claw());
-		
+		addParallel(new close_claw());
 		addSequential(new lift_encoder_reset());
+		
+		addParallel(new arm_to_up());
 		addSequential(new lift_up());
 		//addSequential(new drive_auto(-80));
 		//addSequential(new grab_box());

@@ -39,11 +39,11 @@ public class Claw extends Subsystem {
     }
     
     public void Open() {
-    	doubleSolenoid1.set(DoubleSolenoid.Value.kForward);
+    	doubleSolenoid1.set(DoubleSolenoid.Value.kReverse);
     }
     
     public void Close() {
-    	doubleSolenoid1.set(DoubleSolenoid.Value.kReverse);
+    	doubleSolenoid1.set(DoubleSolenoid.Value.kForward);
     }
     
 }

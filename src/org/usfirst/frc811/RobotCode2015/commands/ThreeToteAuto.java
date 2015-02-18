@@ -7,19 +7,27 @@ package org.usfirst.frc811.RobotCode2015.commands;
 		
 		public ThreeToteAuto() {
 			addSequential(new lift_encoder_reset());
-			addParallel(new open_claw());
+			addSequential(new close_claw());
 			
-			addSequential(new arm_to_up());
+			addParallel(new arm_to_up());
 			addParallel(new lift_up());
+			addSequential(new wait(.8));
+			addSequential(new drive_auto(-77));
 			
-			addSequential(new drive_auto(-80));
+			addSequential(new lift_down());
+			addSequential(new lift_encoder_reset());
 			
-			addSequential(new grab_box());
+			addParallel(new lift_slightly_higher());
+			addSequential(new wait(1.26));
+			addSequential(new open_claw());
 			
-			addSequential(new drive_auto(-80));
+			addSequential(new drive_auto(-77));
+			addSequential(new close_claw());
 			
-			addSequential(new grab_box());
-			addParallel(new strafe_auto(-110));;
+			addParallel(new strafe_auto(-98));
+			
+			addSequential(new lift_down());
+			addSequential(new drive_auto (20));
 			
 			
 			

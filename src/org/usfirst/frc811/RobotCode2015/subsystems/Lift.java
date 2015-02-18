@@ -49,7 +49,7 @@ public class Lift extends Subsystem implements Config {
     	
     	talon_Right.changeControlMode(CANTalon.ControlMode.Position); //makes it so will go to position when you use .set()
     	talon_Right.setFeedbackDevice(CANTalon.FeedbackDevice.QuadEncoder); //sets device so knows what it's looking for
-    	talon_Right.setPID(1.0, 0.0, 0.0); //numbers are temporary
+    	talon_Right.setPID(1.0, 0.8, 0.0); //numbers are temporary
     	talon_Right.enableLimitSwitch(true, true);
     }
 
@@ -67,12 +67,12 @@ public class Lift extends Subsystem implements Config {
     	talon_Left.changeControlMode(CANTalon.ControlMode.PercentVbus);
     	talon_Right.changeControlMode(CANTalon.ControlMode.PercentVbus);
     	
-    	if (joystick2.getRawAxis(LIFT_UP_JOYSTICK_AXIS) > 0.2) {
-    		talon_Left.set(-0.7);
-    		talon_Right.set(-0.7);
+    	if (Math.abs(joystick2.getRawAxis(LIFT_UP_JOYSTICK_AXIS)) > 0.2) {
+    		talon_Left.set(-joystick2.getRawAxis(LIFT_UP_JOYSTICK_AXIS));
+    		talon_Right.set(-joystick2.getRawAxis(LIFT_UP_JOYSTICK_AXIS));
     	} else if (joystick2.getRawAxis(LIFT_DOWN_JOYSTICK_AXIS) > 0.2) {
-    		talon_Left.set(0.7);
-    		talon_Right.set(0.7);
+    		talon_Left.set(joystick2.getRawAxis(LIFT_DOWN_JOYSTICK_AXIS));
+    		talon_Right.set(joystick2.getRawAxis(LIFT_DOWN_JOYSTICK_AXIS));
     	} else {
     		talon_Left.set(0.0);
     		talon_Right.set(0.0);
@@ -129,18 +129,17 @@ public class Lift extends Subsystem implements Config {
     }
     
     public void encoderReset() {
-    	talon_Left.changeControlMode(CANTalon.ControlMode.PercentVbus);
-    	talon_Right.changeControlMode(CANTalon.ControlMode.PercentVbus);
+    
     	
     	if(! talon_Left.isFwdLimitSwitchClosed()) {
-    		talon_Left.set(0.5);
+    		talon_Left.set(0.8);
     		//SmartDashboard.putString("is it working?", "yes!");
     	} else {
     		talon_Left.set(0.0);
     		//SmartDashboard.putString("is it working?2", "limit left is it");
     	}
     	if(! talon_Right.isFwdLimitSwitchClosed()) {
-    		talon_Right.set(0.5);
+    		talon_Right.set(0.8);
     	} else {
     		talon_Right.set(0.0);
     	}

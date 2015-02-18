@@ -57,7 +57,7 @@ public interface Config {
     double LIFT_RIGHT_ENCODER_DISTANCE_PER_PULSE = 1.0;
     int LIFT_MAX_DISTANCE = 0; 
     int LIFT_MIN_DISTANCE = -71344; 
-    int LIFT_PRELOAD_DISTANCE = -23500;
+    int LIFT_PRELOAD_DISTANCE = -28575;
     int LIFT_END_COMMAND_DIFFERENCE_VALUE = 1000; 
     
     
