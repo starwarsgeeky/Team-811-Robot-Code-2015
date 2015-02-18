@@ -1,6 +1,7 @@
 package org.usfirst.frc811.RobotCode2015.commands;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class TwoToteAuto extends CommandGroup {
 	
@@ -12,7 +13,7 @@ public class TwoToteAuto extends CommandGroup {
 		
 		addParallel(new arm_to_up());
 		addParallel(new lift_up());
-		
+		addSequential(new wait(SmartDashboard.getNumber("two tote wait time")));
 		addSequential(new drive_auto(-79));
 
 		addSequential(new strafe_auto(-110));

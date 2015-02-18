@@ -64,6 +64,10 @@ public class  lift_slightly_higher extends Command implements Config {
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-    	//return isTimedOut();
+    	RobotMap.liftTalon_Left.changeControlMode(CANTalon.ControlMode.PercentVbus);
+    	RobotMap.liftTalon_Right.changeControlMode(CANTalon.ControlMode.PercentVbus);
+    	
+    	RobotMap.liftTalon_Left.set(0);
+    	RobotMap.liftTalon_Right.set(0);
     }
 }
