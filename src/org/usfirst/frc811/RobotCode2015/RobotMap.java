@@ -96,6 +96,7 @@ public class RobotMap implements Config {
         LiveWindow.addActuator("Claw", "Double Solenoid 1", clawDoubleSolenoid1);
         
         armarm_talon = new CANTalon(ARM_TALON_PORT);
+        armarm_talon.enableBrakeMode(true);
         
         joystick1 = new Joystick(0);
         joystick2 = new Joystick(1);

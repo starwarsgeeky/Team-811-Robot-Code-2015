@@ -69,7 +69,7 @@ public interface Config {
     double ARM_MIN_DISTANCE = 0;
     int ARM_TALON_FORWARD_SOFT_LIMIT = 430;
     int ARM_TALON_REVERSE_SOFT_LIMIT = 19;
-    int ARM_END_COMMAND_DIFFERENCE_VALUE = 10; //TODO:
+    int ARM_END_COMMAND_DIFFERENCE_VALUE = 5; //TODO:
     double ARM_TO_PRELOAD_SETPOINT = 152; //TODO:
     
     

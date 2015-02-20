@@ -13,7 +13,7 @@ public class TwoToteAuto extends CommandGroup {
 		
 		addParallel(new arm_to_up());
 		addParallel(new lift_up());
-		addSequential(new wait(SmartDashboard.getNumber("two tote wait time")));
+		addSequential(new wait(/*SmartDashboard.getNumber("two tote wait time"*/ 1));
 		addSequential(new drive_auto(-79));
 
 		addSequential(new strafe_auto(-110));

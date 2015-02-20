@@ -39,7 +39,7 @@ public class Arm extends Subsystem implements Config{
     public Arm() {
     	arm_talon.changeControlMode(CANTalon.ControlMode.Position); //makes it so will go to position when you use .set()
     	arm_talon.setFeedbackDevice(CANTalon.FeedbackDevice.AnalogPot); //sets device so knows what it's looking for
-    	arm_talon.setPID(3.5, 0.8, 0.0); //numbers are temporary
+    	arm_talon.setPID(0.8, 1.0, 0.0); //numbers are temporary
     	arm_talon.setForwardSoftLimit(ARM_TALON_FORWARD_SOFT_LIMIT); //put in number - like a limit switch
     	arm_talon.setReverseSoftLimit(ARM_TALON_REVERSE_SOFT_LIMIT); //put in number - like ^^\
     	arm_talon.enableForwardSoftLimit(true);
@@ -58,34 +58,25 @@ public class Arm extends Subsystem implements Config{
     }
     
     public void moveToNoodle() {
-    	arm_talon.changeControlMode(CANTalon.ControlMode.Position);
-    	
     	arm_talon.set(ARM_TO_NOODLE_SETPOINT);
     	
     	SmartDashboard.putString("arm status", "move to noodle");
     }
     
     public void moveToDown() {
-    	arm_talon.changeControlMode(CANTalon.ControlMode.Position);
-    	
     	arm_talon.set(ARM_TO_DOWN_SETPOINT);
     
     	SmartDashboard.putString("arm status", "move to down");
     }
     
     public void moveToUp() {
-    	arm_talon.changeControlMode(CANTalon.ControlMode.Position);
-    	
     	arm_talon.set(ARM_TO_UP_SETPOINT);
 
     	SmartDashboard.putString("arm status", "move to up");
     }
     
     public void moveToPreload() {
-    	arm_talon.changeControlMode(CANTalon.ControlMode.Position);
-    	
     	arm_talon.set(ARM_TO_PRELOAD_SETPOINT);
-    	
     }
     
     public void move_arm_w_joystick() { 

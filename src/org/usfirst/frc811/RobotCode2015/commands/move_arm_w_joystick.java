@@ -12,6 +12,9 @@
 package org.usfirst.frc811.RobotCode2015.commands;
 
 import org.usfirst.frc811.RobotCode2015.Robot;
+import org.usfirst.frc811.RobotCode2015.RobotMap;
+
+import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
@@ -36,7 +39,7 @@ public class  move_arm_w_joystick extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-	
+    	RobotMap.armarm_talon.changeControlMode(CANTalon.ControlMode.PercentVbus);
     }
 
     // Called repeatedly when this Command is scheduled to run

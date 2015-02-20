@@ -1,5 +1,8 @@
 package org.usfirst.frc811.RobotCode2015.commands;
 
+import org.usfirst.frc811.RobotCode2015.Robot;
+import org.usfirst.frc811.RobotCode2015.RobotMap;
+
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
 public class OneToteAuto extends CommandGroup {

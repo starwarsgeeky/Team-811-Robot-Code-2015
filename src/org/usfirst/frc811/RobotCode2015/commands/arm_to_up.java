@@ -11,6 +11,7 @@
 
 package org.usfirst.frc811.RobotCode2015.commands;
 
+import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.command.Command;
 
 import org.usfirst.frc811.RobotCode2015.Config;
@@ -33,6 +34,7 @@ public class  arm_to_up extends Command implements Config {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	RobotMap.armarm_talon.changeControlMode(CANTalon.ControlMode.Position);
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -47,6 +49,7 @@ public class  arm_to_up extends Command implements Config {
 
     // Called once after isFinished returns true
     protected void end() {
+    	RobotMap.armarm_talon.changeControlMode(CANTalon.ControlMode.PercentVbus);
     }
 
     // Called when another command which requires one or more of the same

@@ -18,8 +18,9 @@ public class  preset extends CommandGroup implements Config {
 
     public preset() 
     {
-    	addSequential(new lift_encoder_reset());
     	addSequential(new arm_to_preload());
+    	addSequential(new lift_encoder_reset());
     	addSequential(new lift_to_preload());
+    	addSequential(new arm_to_preload());
     }
 }
