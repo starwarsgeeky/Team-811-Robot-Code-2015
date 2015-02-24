@@ -23,8 +23,8 @@ public interface Config {
     //Drive Ports
     int FRONT_LEFT_PORT = 1;
     int REAR_LEFT_PORT = 2;
-    int FRONT_RIGHT_PORT = 4;
-    int REAR_RIGHT_PORT = 3;
+    int FRONT_RIGHT_PORT = 3;
+    int REAR_RIGHT_PORT = 4;
     int GYRO_CHANNEL = 1;
     int DRIVE_ENCODER_PORT_1 = 1;
     int DRIVE_ENCODER_PORT_2 = 2;

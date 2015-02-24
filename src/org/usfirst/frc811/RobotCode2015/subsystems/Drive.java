@@ -114,7 +114,7 @@ public class Drive extends Subsystem implements Config {
     	    	
     }
     
-    public void strafeAuto() { //might be totally wrong -TEST!!!
+    public void strafeAuto() { 
       	
   	   	RobotMap.pid = new PIDController(4, 0, 0, new PIDSource() { public double pidGet() {
    		return drive_encoder.getDistance();}},
