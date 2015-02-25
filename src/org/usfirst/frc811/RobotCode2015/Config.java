@@ -23,8 +23,8 @@ public interface Config {
     //Drive Ports
     int FRONT_LEFT_PORT = 1;
     int REAR_LEFT_PORT = 2;
-    int FRONT_RIGHT_PORT = 3;
-    int REAR_RIGHT_PORT = 4;
+    int FRONT_RIGHT_PORT = 4;
+    int REAR_RIGHT_PORT = 3;
     int GYRO_CHANNEL = 1;
     int DRIVE_ENCODER_PORT_1 = 1;
     int DRIVE_ENCODER_PORT_2 = 2;
@@ -56,21 +56,21 @@ public interface Config {
     double LIFT_LEFT_ENCODER_DISTANCE_PER_PULSE = 1.0;
     double LIFT_RIGHT_ENCODER_DISTANCE_PER_PULSE = 1.0;
     int LIFT_MAX_DISTANCE = 0; 
-    int LIFT_MIN_DISTANCE = -71344; 
+    int LIFT_MIN_DISTANCE = -73351; //Old -71344
     int LIFT_PRELOAD_DISTANCE = -28575;
     int LIFT_END_COMMAND_DIFFERENCE_VALUE = 1000; 
     
     
     //Arm Vars
     double ARM_TO_NOODLE_SETPOINT = 237;
-    double ARM_TO_DOWN_SETPOINT = 20;
-    double ARM_TO_UP_SETPOINT = 436;
+    double ARM_TO_DOWN_SETPOINT = 50;//Old 20
+    double ARM_TO_UP_SETPOINT = 443;//Old 436
     double ARM_MAX_DISTANCE = 5;
     double ARM_MIN_DISTANCE = 0;
-    int ARM_TALON_FORWARD_SOFT_LIMIT = 430;
-    int ARM_TALON_REVERSE_SOFT_LIMIT = 19;
+    int ARM_TALON_FORWARD_SOFT_LIMIT = 443;//Old 430
+    int ARM_TALON_REVERSE_SOFT_LIMIT = 50;//Old 19
     int ARM_END_COMMAND_DIFFERENCE_VALUE = 5; //TODO:
-    double ARM_TO_PRELOAD_SETPOINT = 152; //TODO:
+    double ARM_TO_PRELOAD_SETPOINT = 170; //Old 152 //TODO:
     
     
     //Drive Controls
