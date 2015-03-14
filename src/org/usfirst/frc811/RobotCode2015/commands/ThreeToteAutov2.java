@@ -6,28 +6,28 @@ package org.usfirst.frc811.RobotCode2015.commands;
 		
 		
 		public ThreeToteAutov2() {
-			addParallel(new lift_up());
-			addParallel(new strafe_auto(-1)); // temp value // Goes right
+			addSequential(new lift_encoder_reset());
 			
-			addSequential(new drive_auto(-57)); // temp value // Goes forward
-			addSequential(new strafe_auto(1)); // temp value // Goes left
-			addSequential(new drive_auto(-20)); // temp value // Goes forward
+			addParallel(new lift_up());
+			addSequential(new strafe_auto(-27)); // temp value // Goes right
+			
+			addSequential(new drive_auto(-50)); // temp value // Goes forward
+			addSequential(new strafe_auto(21)); // temp value // Goes left
+			addSequential(new drive_auto(-27)); // temp value // Goes forward
 			
 			addSequential(new lift_down());
-			addSequential(new lift_encoder_reset());
 			
-			addParallel(new lift_slightly_higher());
-			addParallel(new strafe_auto(-1)); // temp value // Goes right
+			addParallel(new lift_up());
+			addSequential(new strafe_auto(-21)); // temp value // Goes right
 			
-			addSequential(new drive_auto(-57)); // temp value // Goes forward
-			addSequential(new strafe_auto(1)); // temp value // Goes left
-			addSequential(new drive_auto(-20)); // temp value // Goes forward
+			addSequential(new drive_auto(-50)); // temp value // Goes forward
+			addSequential(new strafe_auto(21)); // temp value // Goes left
+			addSequential(new drive_auto(-27)); // temp value // Goes forward
 			
 			addParallel(new strafe_auto(-110)); // Goes to auto zone
-			addParallel(new lift_down());
-			addSequential(new lift_encoder_reset());
+			addSequential(new lift_down());
 			
-			addSequential(new drive_auto(57)); // temp value // Backs away
+			addSequential(new drive_auto(60)); // temp value // Backs away
 			
 			
 			/*addSequential(new lift_down());
