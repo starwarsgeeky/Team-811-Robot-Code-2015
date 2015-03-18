@@ -57,6 +57,7 @@ public interface Config {
     double LIFT_RIGHT_ENCODER_DISTANCE_PER_PULSE = 1.0;
     int LIFT_MAX_DISTANCE = 0; 
     int LIFT_MIN_DISTANCE = -73351; //Old -71344
+    int LIFT_MIDDLE_DISTANCE = -54900;
     int LIFT_PRELOAD_DISTANCE = -28575;
     int LIFT_END_COMMAND_DIFFERENCE_VALUE = 1000; 
     
@@ -90,14 +91,15 @@ public interface Config {
     
     //Arm Controls
     int ARM_MOVEMENT_JOYSTICK_AXIS = 1;
-    int ARM_DOWN_BUTTON = 3;
-    int ARM_UP_BUTTON = 4;
+    //int ARM_DOWN_BUTTON = 3;
+    //int ARM_UP_BUTTON = 4;
     int ARM_NOODLE_BUTTON = 8;
     
     //Lift Controls
     int LIFT_UP_JOYSTICK_AXIS = 3;
     int LIFT_DOWN_JOYSTICK_AXIS = 2;
     int LIFT_DOWN_BUTTON = 5;
+    int LIFT_MIDDLE_BUTTON = 3;
     int LIFT_UP_BUTTON = 6;
     int LIFT_ENCODER_RESET_BUTTON = 7;
     
