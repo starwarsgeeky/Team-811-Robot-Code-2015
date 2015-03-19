@@ -44,6 +44,7 @@ public class RobotMap implements Config {
     public static CANTalon liftTalon_Right;
     public static Compressor clawCompressor1;
     public static DoubleSolenoid clawDoubleSolenoid1;
+    public static DoubleSolenoid kickerDoubleSolenoid;
     public static AnalogPotentiometer armPotentiometer;
     public static CANTalon armarm_talon;
     //public static DigitalInput liftBack_Trigger;
@@ -87,13 +88,17 @@ public class RobotMap implements Config {
         RobotMap.drivedrive_encoder.setReverseDirection(true);
         
         liftTalon_Left = new CANTalon(LIFT_LEFT_TALON_PORT);
+        liftTalon_Left.reverseSensor(true);
         
         liftTalon_Right = new CANTalon(LIFT_RIGHT_TALON_PORT);
+        liftTalon_Right.reverseSensor(true);
         
         clawCompressor1 = new Compressor(COMPRESSOR_PORT);
         
         clawDoubleSolenoid1 = new DoubleSolenoid(CLAW_OPEN_CHANNEL, CLAW_CLOSE_CHANNEL);
         LiveWindow.addActuator("Claw", "Double Solenoid 1", clawDoubleSolenoid1);
+        
+        kickerDoubleSolenoid =  new DoubleSolenoid(KICKER_OUT_CHANNEL, KICKER_IN_CHANNEL);
         
         armarm_talon = new CANTalon(ARM_TALON_PORT);
         armarm_talon.enableBrakeMode(true);

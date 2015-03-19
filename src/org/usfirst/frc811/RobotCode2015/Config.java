@@ -15,6 +15,10 @@ public interface Config {
     int CLAW_CLOSE_CHANNEL = 0;
     int CLAW_OPEN_CHANNEL = 1;
     
+    //Kicker Ports
+    int KICKER_OUT_CHANNEL = 2;
+    int KICKER_IN_CHANNEL = 3;
+    
     //Lift Ports
     int LIFT_LEFT_TALON_PORT = 2;
     int LIFT_RIGHT_TALON_PORT = 3;
@@ -68,10 +72,10 @@ public interface Config {
     double ARM_TO_UP_SETPOINT = 443;//Old 436
     double ARM_MAX_DISTANCE = 5;
     double ARM_MIN_DISTANCE = 0;
-    int ARM_TALON_FORWARD_SOFT_LIMIT = 443;//Old 430
-    int ARM_TALON_REVERSE_SOFT_LIMIT = 50;//Old 19
+    int ARM_TALON_FORWARD_SOFT_LIMIT = 751;//Old 430
+    int ARM_TALON_REVERSE_SOFT_LIMIT = 365;//Old 19
     int ARM_END_COMMAND_DIFFERENCE_VALUE = 5; //TODO:
-    double ARM_TO_PRELOAD_SETPOINT = 170; //Old 152 //TODO:
+    double ARM_TO_PRELOAD_SETPOINT = 478; //Old 152 //TODO:
     
     
     //Drive Controls
@@ -95,11 +99,16 @@ public interface Config {
     //int ARM_UP_BUTTON = 4;
     int ARM_NOODLE_BUTTON = 8;
     
+    //Kicker Controls
+    int KICKER_OUT_AXIS = 2;
+    int KICKER_IN_AXIS = 3;
+    
+    
     //Lift Controls
     int LIFT_UP_JOYSTICK_AXIS = 3;
     int LIFT_DOWN_JOYSTICK_AXIS = 2;
     int LIFT_DOWN_BUTTON = 5;
-    int LIFT_MIDDLE_BUTTON = 3;
+    int LIFT_MIDDLE_BUTTON = 8;
     int LIFT_UP_BUTTON = 6;
     int LIFT_ENCODER_RESET_BUTTON = 7;
     

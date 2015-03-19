@@ -9,7 +9,7 @@ package org.usfirst.frc811.RobotCode2015.commands;
 			addSequential(new lift_encoder_reset());
 			
 			addParallel(new lift_up());
-			addSequential(new strafe_auto(-27)); // temp value // Goes right
+			addSequential(new strafe_auto(-29)); // temp value // Goes right
 			
 			addSequential(new drive_auto(-50)); // temp value // Goes forward
 			addSequential(new strafe_auto(21)); // temp value // Goes left

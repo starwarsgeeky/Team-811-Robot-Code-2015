@@ -46,7 +46,7 @@ public class  lift_middle extends Command implements Config {
     	RobotMap.liftTalon_Left.set(LIFT_MIDDLE_DISTANCE);
     	RobotMap.liftTalon_Right.set(LIFT_MIDDLE_DISTANCE);
     	
-    	SmartDashboard.putString("lift status", "lift down");
+    	SmartDashboard.putString("lift status", "lift middle");
     }
 
     // Make this return true when this Command no longer needs to run execute()
