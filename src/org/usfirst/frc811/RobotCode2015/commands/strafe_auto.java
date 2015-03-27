@@ -86,5 +86,7 @@ public class  strafe_auto extends Command implements Config {
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+    	RobotMap.driveRobotDrive41.mecanumDrive_Cartesian(0, 0, 0, 0);
+    	RobotMap.pid.disable();
     }
 }

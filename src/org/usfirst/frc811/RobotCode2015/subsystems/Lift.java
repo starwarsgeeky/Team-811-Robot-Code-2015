@@ -49,7 +49,7 @@ public class Lift extends Subsystem implements Config {
     	
     	talon_Right.changeControlMode(CANTalon.ControlMode.Position); //makes it so will go to position when you use .set()
     	talon_Right.setFeedbackDevice(CANTalon.FeedbackDevice.QuadEncoder); //sets device so knows what it's looking for
-    	talon_Right.setPID(1.0, 0.8, 0.0); //numbers are temporary
+    	talon_Right.setPID(1.0, 0.0, 0.0); //numbers are temporary
     	talon_Right.enableLimitSwitch(true, true);
     }
 

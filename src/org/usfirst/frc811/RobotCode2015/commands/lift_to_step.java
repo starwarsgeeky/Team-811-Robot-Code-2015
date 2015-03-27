@@ -22,9 +22,9 @@ import org.usfirst.frc811.RobotCode2015.RobotMap;
 /**
  *
  */
-public class  lift_middle extends Command implements Config {
+public class  lift_to_step extends Command implements Config {
 	
-    public lift_middle() {
+    public lift_to_step() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
 
@@ -43,16 +43,16 @@ public class  lift_middle extends Command implements Config {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	RobotMap.liftTalon_Left.set(LIFT_MIDDLE_DISTANCE);
-    	RobotMap.liftTalon_Right.set(LIFT_MIDDLE_DISTANCE);
+    	RobotMap.liftTalon_Left.set(LIFT_STEP_DISTANCE);
+    	RobotMap.liftTalon_Right.set(LIFT_STEP_DISTANCE);
     	
-    	SmartDashboard.putString("lift status", "lift middle");
+    	SmartDashboard.putString("lift status", "lift to step");
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
     	return ((timeSinceInitialized() > 0.25) && (Math.abs(RobotMap.liftTalon_Left.getClosedLoopError()) < LIFT_END_COMMAND_DIFFERENCE_VALUE) &&
-				(Math.abs(RobotMap.liftTalon_Left.getClosedLoopError()) < LIFT_END_COMMAND_DIFFERENCE_VALUE)) || isTimedOut(); //TODO:
+				(Math.abs(RobotMap.liftTalon_Right.getClosedLoopError()) < LIFT_END_COMMAND_DIFFERENCE_VALUE)) || isTimedOut(); //TODO:
     }
 
     // Called once after isFinished returns true

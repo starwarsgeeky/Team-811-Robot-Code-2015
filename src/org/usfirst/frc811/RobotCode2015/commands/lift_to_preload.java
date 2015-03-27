@@ -40,7 +40,7 @@ public class lift_to_preload extends Command implements Config {
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
     	return ((timeSinceInitialized() > .25) && (Math.abs(RobotMap.liftTalon_Left.getClosedLoopError()) < LIFT_END_COMMAND_DIFFERENCE_VALUE) &&
-    				((Math.abs(RobotMap.liftTalon_Left.getClosedLoopError())) < LIFT_END_COMMAND_DIFFERENCE_VALUE)) || isTimedOut(); //TODO:
+    				((Math.abs(RobotMap.liftTalon_Right.getClosedLoopError())) < LIFT_END_COMMAND_DIFFERENCE_VALUE)) || isTimedOut(); //TODO:
     	    }
 
     // Called once after isFinished returns true

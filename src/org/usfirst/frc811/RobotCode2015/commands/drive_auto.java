@@ -49,7 +49,7 @@ public class  drive_auto extends Command implements Config {
 
     	setTimeout(5);
       	
-  	   	RobotMap.pid = new PIDController(1, .6, 3, new PIDSource() { public double pidGet() {
+  	   	RobotMap.pid = new PIDController(1, .3, 3, new PIDSource() { public double pidGet() {
   	   	SmartDashboard.putNumber("Auto value", RobotMap.drivedrive_encoder.getDistance());
   	   		return RobotMap.drivedrive_encoder.getDistance();
    		}},
@@ -95,5 +95,7 @@ public class  drive_auto extends Command implements Config {
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+    	RobotMap.driveRobotDrive41.mecanumDrive_Cartesian(0, 0, 0, 0);
+    	RobotMap.pid.disable();
     }
 }

@@ -6,7 +6,6 @@ package org.usfirst.frc811.RobotCode2015.commands;
 		
 		
 		public ThreeToteAutov3() {
-			addParallel(new arm_to_preload());
 			addSequential(new lift_encoder_reset());
 			addSequential(new close_claw());
 			addParallel(new lift_up());
