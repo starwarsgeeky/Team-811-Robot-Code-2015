@@ -1,5 +1,6 @@
 package org.usfirst.frc811.RobotCode2015.commands;
 
+import org.usfirst.frc811.RobotCode2015.Robot;
 import org.usfirst.frc811.RobotCode2015.RobotMap;
 
 import jdk.nashorn.internal.runtime.regexp.joni.Config;
@@ -7,6 +8,12 @@ import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.command.Command;
 
 public class lift_fullspeed extends Command implements Config {
+	
+	public lift_fullspeed() {
+		requires(Robot.lift);
+		
+		setTimeout(3);
+	}
 
 	@Override
 	protected void end() {
@@ -40,7 +47,7 @@ public class lift_fullspeed extends Command implements Config {
 	@Override
 	protected boolean isFinished() {
 		// TODO Auto-generated method stub
-		return false;
+		return isTimedOut();
 	}
 
 }
