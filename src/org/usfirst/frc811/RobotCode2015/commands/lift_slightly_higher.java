@@ -43,8 +43,8 @@ public class  lift_slightly_higher extends Command implements Config {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	RobotMap.liftTalon_Left.set(LIFT_MIN_DISTANCE - 2000.71);
-    	RobotMap.liftTalon_Right.set(LIFT_MIN_DISTANCE - 2000.71);
+    	RobotMap.liftTalon_Left.set(LIFT_MIN_DISTANCE + 2000.71);
+    	RobotMap.liftTalon_Right.set(LIFT_MIN_DISTANCE + 2000.71);
     	
     	SmartDashboard.putString("lift status", "lift down");
     }
