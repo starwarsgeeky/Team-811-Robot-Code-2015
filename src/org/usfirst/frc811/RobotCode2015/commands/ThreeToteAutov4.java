@@ -4,13 +4,14 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 
 public class ThreeToteAutov4 extends CommandGroup {
 	
-	public ThreeToteAutov4() {
+	public ThreeToteAutov4() { 
 
 	//addParallel(new close_claw());
 	addSequential(new lift_encoder_reset());
 	
 	
 	addParallel(new arm_to_up());
+	addParallel(new drive_auto(-7));
 	addParallel(new lift_up());
 	addSequential(new wait(.5));
 	
@@ -19,7 +20,7 @@ public class ThreeToteAutov4 extends CommandGroup {
 	addSequential(new lift_down());
 	
 	//addParallel(new open_claw());
-	addParallel(new lift_up());
+	addParallel(new lift_fullspeed());
 	addSequential(new strafe_then_drive());
 	//addSequential(new strafe_auto(-29));
 	
